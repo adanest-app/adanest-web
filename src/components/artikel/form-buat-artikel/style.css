@@ -1,0 +1,66 @@
+#form-buat-artikel {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+#form-buat-artikel div:first-child {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+#form-buat-artikel > div:last-child {
+  margin-top: 16px;
+  overflow-y: auto;
+}
+
+#form-buat-artikel div.form-control:last-child {
+  max-width: none;
+  width: 100%;
+}
+
+#form-buat-artikel textarea {
+  width: 100%;
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+#form-buat-artikel .cover-artikel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 0 16px; */
+  max-width: 168px;
+  width: 100%;
+  gap: 8px;
+  height: 59px;
+  border-radius: 16px;
+  border: 2px solid var(--green--md);
+  color: var(--green--md);
+  cursor: pointer;
+  overflow: hidden;
+}
+#form-buat-artikel .cover-artikel p {
+  font-size: 14px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+}
+
+#form-buat-artikel .cover-artikel img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#form-buat-artikel a {
+  color: var(--green--md);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+}
+
+#form-buat-artikel a:hover {
+  text-decoration: underline;
+}

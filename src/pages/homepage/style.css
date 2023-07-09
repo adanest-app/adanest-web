@@ -1,0 +1,30 @@
+.hero-bg-yellow {
+  background-color: var(--yellow--md);
+}
+
+:is(#about, #why, #services, #team, #contact) {
+  width: 100%;
+  margin-bottom: 64px;
+}
+
+:is(#about, #why, #services, #team, #contact) h3 {
+  color: var(--green--md);
+  font-size: 36px;
+  font-weight: bold;
+  font-variation-settings: "wght" 700;
+  text-align: center;
+  line-height: 44px;
+  margin-bottom: 8px;
+}
+
+:is(#about, #why, #services, #team, #contact) > p {
+  margin: 0 auto;
+  max-width: 880px;
+  color: var(--gray--md);
+  font-size: 20px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 50px;
+}

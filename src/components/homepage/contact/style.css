@@ -1,0 +1,16 @@
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+#contact textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+#contact button {
+  flex-shrink: 0;
+  flex-grow: 0;
+}

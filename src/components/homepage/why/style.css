@@ -1,0 +1,48 @@
+#why > p {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#why > div {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 80px;
+}
+
+#why > div > div {
+  width: fit-content;
+  background-color: var(--green--xs);
+  border-radius: 26px;
+  padding: 50px 48px 48px;
+  position: relative;
+  box-shadow: var(--why--shadow--md);
+}
+
+#why > div > div > div {
+  background-color: var(--white);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 80px;
+  top: -40px;
+}
+
+#why > div > div > div img {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#why > div > div p {
+  max-width: 450px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--green--md);
+  text-align: justify;
+}

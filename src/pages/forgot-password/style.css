@@ -1,0 +1,26 @@
+#forgot-password {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.forgot-password__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.forgot-password__title {
+  color: var(--gray--xl);
+  font-size: 64px;
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  line-height: 75px;
+}
+
+.forgot-password__desc {
+  color: var(--gray--xl);
+  font-size: 28px;
+}

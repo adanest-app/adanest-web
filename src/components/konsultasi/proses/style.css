@@ -1,0 +1,218 @@
+.konsultasi-container {
+  width: 100%;
+  background-color: var(--green--xs);
+  height: 100vh;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.konsultasi-container .konsultasi-center {
+  background-color: var(--white);
+  border-radius: 32px;
+  width: 100%;
+  height: calc(100vh - 32px);
+}
+
+.konsultasi-center {
+  padding: 16px;
+  position: relative;
+}
+
+.konsultasi-center .konsultasi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.konsultasi-center .konsultasi-header .konsultasi-avatar img {
+  border-radius: 50%;
+}
+.konsultasi-center .konsultasi-header .konsultasi-user-info {
+  width: 100%;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--green--xs);
+}
+.konsultasi-center .konsultasi-header .konsultasi-user-info h1 {
+  color: var(--gray--lg);
+  font-size: 20px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.konsultasi-center .konsultasi-header .konsultasi-user-info span {
+  color: var(--gray--md);
+  line-height: normal;
+}
+
+.konsultasi-center .konsultasi-header .konsultasi-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: var(--gray--xl);
+}
+
+.konsultasi-body {
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.konsultasi-body > div {
+  border-radius: 16px 0px 16px 16px;
+  background: var(--green--xs);
+  width: fit-content;
+  position: relative;
+  right: 0;
+  left: 99.5%;
+  transform: translateX(-100%);
+  padding: 16px;
+  color: var(--gray--xl);
+  line-height: normal;
+  max-width: 95%;
+  margin-top: 16px;
+}
+
+.konsultasi-body > div span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: var(--gray--sm);
+  font-size: 10px;
+  line-height: normal;
+}
+
+.konsultasi-body > div[data-from-me="false"] {
+  position: static;
+  transform: translateX(0);
+  border-radius: 0px 16px 16px 16px;
+}
+
+.konsultasi-body > div[data-from-me="true"] + div[data-from-me="true"] {
+  margin-top: 2px;
+  border-radius: 16px 16px 16px 16px;
+}
+.konsultasi-body > div[data-from-me="false"] + div[data-from-me="false"] {
+  border-radius: 16px 16px 16px 16px;
+  margin-top: 2px;
+}
+.konsultasi-center .konsultasi-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.konsultasi-center .konsultasi-footer input {
+  width: 100%;
+  border: none;
+  height: 50px;
+  border-radius: 32px;
+  padding: 24px;
+  background-color: var(--green--xs);
+}
+.konsultasi-center .konsultasi-footer input::placeholder {
+  color: var(--gray--sm);
+  line-height: normal;
+}
+.konsultasi-center .konsultasi-footer input:focus {
+  outline: none;
+}
+.konsultasi-center .konsultasi-footer button {
+  flex-shrink: 0;
+  width: 70px;
+  height: 50px;
+  border-radius: 32px;
+  border: none;
+  color: var(--white);
+  background-color: var(--gray--md);
+  padding-left: 12px;
+}
+.konsultasi-left {
+  max-width: 350px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 32px;
+  padding: 16px;
+  height: calc(100vh - 32px);
+}
+
+.konsultasi-left .konsultasi-left-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: hidden;
+}
+
+.konsultasi-left .konsultasi-users {
+  height: calc(100vh - 175px);
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.konsultasi-left .konsultasi-left-body .form-control {
+  max-width: 100%;
+  width: 100%;
+}
+.konsultasi-left .konsultasi-left-body .konsultasi-user {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.konsultasi-left .konsultasi-left-body .konsultasi-user-info {
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.konsultasi-left .konsultasi-left-body .konsultasi-user .konsultasi-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.konsultasi-left .konsultasi-left-body .konsultasi-user-info h1 {
+  color: var(--green--md);
+  font-size: 16px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.konsultasi-left .konsultasi-left-body .konsultasi-user-info p {
+  line-height: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: var(--gray--md);
+}
+
+.konsultasi-left .konsultasi-left-body .konsultasi-count-new-message {
+  background-color: var(--green--md);
+  color: var(--white);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: normal;
+  align-self: center;
+}

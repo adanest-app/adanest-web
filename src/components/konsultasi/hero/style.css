@@ -1,0 +1,33 @@
+.konsultasi-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.konsultasi-hero .deskripsi h3 {
+  color: var(--yellow--md);
+  text-align: justify;
+  font-size: 32px;
+  font-weight: 600;
+  font-variation-settings: "wght" 600;
+  line-height: normal;
+  letter-spacing: 10.24px;
+}
+
+.konsultasi-hero .deskripsi h1 {
+  color: var(--blue--md);
+  font-size: 48px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: normal;
+}
+
+.konsultasi-hero .deskripsi p {
+  color: var(--gray--xl);
+  font-size: 20px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  line-height: normal;
+  margin-bottom: 16px;
+}

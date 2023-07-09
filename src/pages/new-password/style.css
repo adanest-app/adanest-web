@@ -1,0 +1,20 @@
+#new-password {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+.new-password__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.new-password__title {
+  color: var(--gray--md);
+  font-size: 24px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+}

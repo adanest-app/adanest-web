@@ -1,0 +1,21 @@
+.modal-content:has(.form__profile-public, .form__profile-personal) {
+  width: max-content;
+}
+
+.form__profile-public,
+.form__profile-personal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.form__profile-public div:first-child {
+  display: flex;
+  gap: 16px;
+}
+
+.form__profile-public textarea {
+  resize: none;
+  min-height: 150px;
+}

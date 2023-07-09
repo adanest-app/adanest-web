@@ -1,0 +1,40 @@
+#create-account {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 32px 0px;
+}
+
+#create-account > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.create-account__sub {
+  color: var(--gray--sm);
+  font-size: 20px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: 24px;
+}
+
+.create-account__title {
+  color: var(--gray--md);
+  font-size: 48px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: 58px;
+}
+
+.create-account-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.create-account-form :is(div:first-child, div:nth-child(4)) {
+  display: flex;
+  gap: 16px;
+}

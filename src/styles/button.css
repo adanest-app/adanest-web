@@ -1,0 +1,112 @@
+.btn {
+  padding: 16px 40px;
+  font-size: 20px;
+  border-radius: 40px;
+}
+
+.btn-sm {
+  padding: 12px 32px;
+  font-size: 16px;
+  border-radius: 32px;
+}
+
+.btn-filled {
+  font-weight: 500;
+  color: var(--yellow--md);
+  font-variation-settings: "wght" 500;
+  border: none;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: box-shadow 0.3s linear;
+}
+
+.btn-filled:hover {
+  box-shadow: var(--button--shadow--md);
+  transition: all 0.3s linear;
+}
+
+.btn-filled:active {
+  background-color: var(--white--sm);
+  color: var(--yellow--sm);
+}
+
+.btn-filled-green {
+  color: var(--white);
+  background-color: var(--green--md);
+}
+
+.btn-filled-green:active {
+  background-color: var(--green--lg);
+  color: var(--white--sm);
+}
+
+.btn-filled-yellow {
+  color: var(--white);
+  background-color: var(--yellow--md);
+}
+
+.btn-filled-yellow:active {
+  background-color: var(--yellow--lg);
+}
+
+.btn-filled-gray {
+  color: var(--white);
+  background-color: var(--gray--md);
+}
+
+.btn-filled-gray:active {
+  color: var(--white);
+  background-color: var(--gray--sm);
+}
+
+.btn-filled-red {
+  color: var(--white);
+  background-color: var(--red--md);
+}
+
+.btn-filled-red:active {
+  color: var(--white);
+  background-color: var(--red--sm);
+}
+
+.btn-outline {
+  color: var(--white);
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  outline: 2px solid var(--white);
+  outline-offset: -2px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: box-shadow 0.3s linear;
+}
+
+.btn-outline:hover {
+  box-shadow: var(--button--shadow--md);
+  transition: all 0.3s linear;
+}
+
+.btn-outline:active {
+  outline-color: var(--white--sm);
+  color: var(--white--sm);
+}
+
+.btn-outline-yellow {
+  color: var(--yellow--md);
+  outline-color: var(--yellow--md);
+}
+
+.btn-outline-yellow:active {
+  outline-color: var(--yellow--sm);
+  color: var(--yellow--sm);
+}
+
+.btn-outline-green {
+  color: var(--green--md);
+  outline-color: var(--green--md);
+}
+
+.btn-outline-green:active {
+  outline-color: var(--green--lg);
+  color: var(--green--lg);
+}

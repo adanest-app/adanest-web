@@ -1,0 +1,139 @@
+:is(#header-primary, #header-secondary),
+:is(#header-primary, #header-secondary) div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+:is(#header-primary, #header-secondary) {
+  padding: 16px 0;
+}
+:is(#header-primary, #header-secondary) .brand {
+  gap: 4px;
+}
+:is(#header-primary, #header-secondary) .brand-name {
+  font-family: "Pacifico", sans-serif;
+  font-size: 32px;
+  font-variation-settings: "wght" 700;
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+#header-secondary .brand-name {
+  color: var(--yellow--md);
+}
+
+:is(#header-primary, #header-secondary) div {
+  gap: 64px;
+}
+
+:is(#header-primary, #header-secondary) nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+:is(#header-primary, #header-secondary) nav a {
+  font-size: 16px;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  text-transform: uppercase;
+}
+
+#header-secondary nav a {
+  color: var(--gray--xl);
+}
+
+:is(#header-primary, #header-secondary) nav a::before {
+  content: " ";
+  background-color: var(--white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s linear;
+}
+
+#header-secondary nav a::before {
+  background-color: var(--gray--xl);
+}
+
+:is(#header-primary, #header-secondary) nav a:hover::before {
+  transform: scaleX(1);
+}
+
+:is(#header-primary, #header-secondary) nav a.active::before {
+  transform: scaleX(1);
+}
+
+:is(#header-primary, #header-secondary) div div {
+  gap: 16px;
+}
+
+.user-profile-btn {
+  flex-shrink: 0;
+  display: flex;
+  gap: unset !important;
+  cursor: pointer;
+  position: relative;
+}
+.user-profile-btn .dropdown-icon {
+  transition: transform 0.3s linear;
+}
+.user-profile-btn:hover .dropdown-icon {
+  transform: rotateX(180deg);
+}
+.user-profile-btn img {
+  margin: 8px 0;
+  flex-shrink: 0;
+  border: 2px solid var(--yellow--md);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.user-profile-btn .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+  right: 0;
+  transition: opacity 0.3s linear;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  gap: unset !important;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.user-profile-btn .dropdown-menu a {
+  width: 100%;
+  padding: 8px 16px;
+  display: block;
+  text-decoration: none;
+  color: var(--gray--xl);
+  font-size: 14px;
+  text-transform: capitalize;
+  transition: all 0.1s linear;
+}
+
+.user-profile-btn .dropdown-menu a:hover {
+  background-color: var(--gray--md);
+  color: #fff;
+}
+.user-profile-btn .dropdown-menu a:active {
+  background-color: var(--gray--xl);
+}
+.user-profile-btn:hover .dropdown-menu,
+.user-profile-btn:focus-within .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto; /* tambahkan properti ini */
+}

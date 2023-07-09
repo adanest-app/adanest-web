@@ -1,0 +1,68 @@
+#artikel-komentar {
+  margin-top: 16px;
+  margin-bottom: 32px;
+  max-width: 80ch;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+
+#artikel-komentar .form-control {
+  max-width: 100%;
+  width: 100%;
+  margin-bottom: 16px;
+}
+#artikel-komentar .komentar {
+  margin: 32px 0;
+}
+#artikel-komentar .komentar-item {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+#artikel-komentar .komentar-item-avatar img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+#artikel-komentar .komentar-item-konten h1 {
+  color: var(--green--md);
+  font-size: 24px;
+  line-height: normal;
+  padding: 12px 0;
+}
+#artikel-komentar .komentar-item-konten h1 span {
+  color: var(--gray--sm);
+  line-height: normal;
+  font-size: 16px;
+  margin-left: 8px;
+}
+#artikel-komentar .komentar-item-konten p {
+  color: var(--gray--xl);
+  text-align: justify;
+  font-size: 20px;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+#artikel-komentar .komentar-item-aksi span {
+  color: var(--gray--md);
+  text-align: justify;
+  line-height: normal;
+  margin-right: 16px;
+}
+
+#artikel-komentar .komentar-item-aksi span:hover {
+  color: var(--green--md);
+  cursor: pointer;
+}
+
+#artikel-komentar .komentar-item-aksi .komentar-balasan-input {
+  margin-top: 4px;
+}
+#artikel-komentar .komentar-item-aksi .komentar-balasan-input > div:last-child {
+  display: flex;
+  gap: 8px;
+}

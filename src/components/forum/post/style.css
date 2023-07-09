@@ -1,0 +1,122 @@
+.forum-search {
+  max-width: 80ch;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.forum-search .form-control {
+  max-width: 100%;
+  width: 100%;
+}
+
+.forum-search .form-control input {
+  border-radius: 60px;
+}
+
+.forum-posts {
+  max-width: 80ch;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.post-card {
+  border-radius: 32px;
+  border: 2px solid var(--green--md);
+  margin-bottom: 16px;
+}
+
+.post-card-body {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  gap: 16px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.post-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.post-card-left img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-card-center {
+  width: 100%;
+}
+
+.post-card-center-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  display: flex;
+}
+.post-card-center-header span:first-child {
+  color: var(--green--md);
+  font-size: 24px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  line-height: normal;
+}
+
+.post-card-center-header span:nth-child(2) {
+  color: var(--yellow--sm);
+  font-size: 24px;
+  line-height: normal;
+}
+
+.post-card-center-header :is(.post-time-ago, .post-delete-icon) {
+  color: var(--gray--md);
+  font-size: 24px;
+  line-height: normal;
+}
+.post-card-center-header .post-delete-icon {
+  cursor: pointer;
+  color: var(--red--md);
+  font-size: 29px;
+}
+.post-card-center-body {
+  border-radius: 0px 32px 32px 32px;
+  background: var(--green--xs);
+  padding: 11px 19px;
+}
+
+.post-card-center-body p {
+  color: var(--green--md);
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.post-card-right {
+  align-self: flex-end;
+  color: var(--green--md);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-card-right :is(.like, .comment) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.post-card-right :is(.like, .comment) div {
+  border-radius: 52px;
+  border: 2px solid var(--green--md);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

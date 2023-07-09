@@ -1,0 +1,64 @@
+.form-control {
+  position: relative;
+  max-width: 366px;
+  width: 366px;
+}
+
+.form-control-sm {
+  max-width: 175px;
+  width: 175px;
+}
+
+.form-control label {
+  position: absolute;
+  top: 16.5px;
+  left: 20px;
+  color: var(--gray--sm);
+  font-size: 16px;
+  font-weight: 300;
+  font-variation-settings: "wght" 300;
+  transition: all 0.3s ease-in-out;
+  cursor: text;
+}
+
+.form-control
+  :is(
+    input:focus,
+    input:not(:placeholder-shown),
+    textarea:focus,
+    textarea:not(:placeholder-shown)
+  )
+  ~ label,
+.form-control label:focus-within {
+  top: 6px;
+  font-size: 11px;
+}
+
+.form-control :is(input, textarea) {
+  width: 100%;
+  font-size: 16px;
+  border-radius: 16px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  color: var(--gray--md);
+  padding: 18px 20px;
+  border: none;
+  outline: none;
+  transition: all 0.3s linear;
+  height: 59px;
+}
+
+.form-control
+  :is(
+    input:focus,
+    input:not(:placeholder-shown),
+    textarea:focus,
+    textarea:not(:placeholder-shown)
+  ) {
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+.form-control-outline :is(input, textarea) {
+  border: 2px solid var(--green--md) !important;
+}

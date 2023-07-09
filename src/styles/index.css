@@ -1,0 +1,74 @@
+:root {
+  scroll-behavior: smooth;
+  /* Color styles */
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
+  --gray--md: rgba(109, 109, 109, 1);
+  --gray--sm: rgba(147, 147, 147, 1);
+  --gray--lg: rgba(65, 65, 65, 1);
+  --gray--xl: rgba(48, 48, 48, 1);
+  --gray--xs: rgba(217, 217, 217, 1);
+  --yellow--md: rgba(255, 165, 0, 1);
+  --yellow--sm: rgba(255, 188, 64, 1);
+  --yellow--lg: rgba(226, 146, 0, 1);
+  --green--xs: rgba(195, 252, 241, 1);
+  --green--md: rgba(0, 82, 72, 1);
+  --green--lg: rgba(0, 41, 36, 1);
+  --white--sm: rgba(255, 255, 255, 0.699999988079071);
+  --red--md: rgba(232, 75, 75, 1);
+  --red--sm: rgba(186, 75, 84, 1);
+  --blue--md: rgba(68, 121, 250, 1);
+  --indigo--xl: rgba(96, 102, 125, 1);
+  --neutral--md: rgba(18, 25, 39, 1);
+  --purple--md: rgba(151, 71, 255, 1);
+
+  /* Effect styles */
+  --button--shadow--md: 0px 4px 8px rgba(0, 0, 0, 0.16);
+  --why--shadow--md: 0px 0px 0px rgba(0, 0, 0, 0.1),
+    3px 2px 8px rgba(0, 0, 0, 0.1), 12px 8px 15px rgba(0, 0, 0, 0.09),
+    28px 19px 20px rgba(0, 0, 0, 0.05), 50px 34px 24px rgba(0, 0, 0, 0.01),
+    77px 53px 26px rgba(0, 0, 0, 0);
+  --service--shadow--md: 0px 0px 0px rgba(0, 0, 0, 0.08),
+    5px 5px 15px rgba(0, 0, 0, 0.08), 20px 19px 27px rgba(0, 0, 0, 0.07),
+    44px 42px 37px rgba(0, 0, 0, 0.04), 78px 75px 43px rgba(0, 0, 0, 0.01),
+    122px 118px 48px rgba(0, 0, 0, 0);
+  --konsultasi-rekomendasi--shadow--md: 0px 0px 0px rgba(0, 0, 0, 0.08),
+    0px 5px 11px rgba(0, 0, 0, 0.08), 0px 21px 21px rgba(0, 0, 0, 0.07),
+    0px 47px 28px rgba(0, 0, 0, 0.04), 0px 83px 33px rgba(0, 0, 0, 0.01),
+    0px 130px 36px rgba(0, 0, 0, 0);
+  --notif--shadow--md: 0px 0px 0px rgba(0, 0, 0, 0.08),
+    1px 11px 24px rgba(0, 0, 0, 0.08), 3px 44px 45px rgba(0, 0, 0, 0.07),
+    6px 100px 60px rgba(0, 0, 0, 0.04), 11px 178px 71px rgba(0, 0, 0, 0.01),
+    18px 278px 78px rgba(0, 0, 0, 0);
+}
+
+* {
+  font-family: "Inter Variable", sans-serif;
+  font-weight: normal;
+  font-variation-settings: "wght" 400;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--green--md);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--green--lg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.full-height {
+  min-height: 100vh;
+}

@@ -1,0 +1,10 @@
+.form-buat-post .form-control {
+  max-width: 100%;
+  width: 100%;
+}
+.form-buat-post textarea {
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  min-height: 200px;
+}

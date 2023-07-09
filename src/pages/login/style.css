@@ -1,0 +1,49 @@
+#login {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.login-image {
+  max-width: 523px;
+  max-height: 503px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-form__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form__title {
+  color: var(--gray--lg);
+  font-size: 32px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+}
+
+.login-form__signup {
+  color: var(--gray--sm);
+  font-size: 16px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+}
+
+.login-form__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form__forgotpassword {
+  color: var(--red--md);
+  font-size: 16px;
+}

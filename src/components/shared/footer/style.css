@@ -1,0 +1,64 @@
+.bg-footer {
+  background-color: var(--neutral--md);
+}
+
+footer {
+  padding-top: 24px;
+}
+
+footer > div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  gap: 74px;
+}
+
+footer > div:first-child > :is(div:first-child, div:last-child) {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+footer > div:first-child > :is(div:first-child, div:last-child) h1 {
+  color: var(--green--xs);
+  font-size: 32px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+}
+
+footer > div:first-child > div:first-child h1 {
+  font-family: Pacifico, "sans-serif";
+}
+footer > div:first-child > :is(div:first-child, div:last-child) p {
+  color: var(--gray--xs);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+footer > div:first-child > div:first-child p {
+  max-width: 330px;
+}
+
+footer > div:first-child > div:last-child > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  gap: 24px;
+}
+
+footer > div:last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+footer > div:last-child p {
+  color: var(--gray--xs);
+  font-size: 16px;
+}
+
+footer > div:last-child > div {
+  display: flex;
+  gap: 64px;
+}
