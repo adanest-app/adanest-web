@@ -92,7 +92,7 @@ function Posts({ setPosts, postId = null, posts }) {
   useEffect(() => {
     postId
       ? get(`p/${postId}`).then((res) => {
-          setPosts(res || []);
+          res && setPosts([res]);
         })
       : get(`search?sort=desc&sortField=createdAt&type=forum`).then((res) => {
           setPosts(res || []);
