@@ -1,0 +1,101 @@
+.konsultasi-container ~ #chat-bot {
+  display: none;
+}
+
+#chat-bot {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  padding-top: 4px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: var(--blue--md);
+  box-shadow: var(--button--shadow--md);
+}
+body:has(#chat-bot .cb-card) {
+  overflow: hidden;
+}
+#chat-bot .cb-card {
+  position: absolute;
+  bottom: 100%;
+  right: 100%;
+  width: 400px;
+  min-height: calc(100vh - 120px);
+  background: var(--white);
+  box-shadow: var(--notif--shadow--md);
+  border-radius: 8px;
+  border: 2px solid var(--blue--md);
+  overflow: hidden;
+}
+
+#chat-bot .cb-body {
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  bottom: 34px;
+  left: 0;
+  right: 0;
+  padding: 2px 4px;
+}
+
+#chat-bot .cb-body div {
+  background-color: var(--gray--xs);
+  border-radius: 4px;
+  max-width: 300px;
+  width: fit-content;
+  margin-bottom: 2px;
+  position: relative;
+  padding: 1px 6px;
+  color: var(--gray--xl);
+}
+
+#chat-bot .cb-body [data-from-me="true"] {
+  right: 0;
+  left: 100%;
+  transform: translateX(-100%);
+  border-radius: 4px 0 4px 4px;
+}
+
+#chat-bot
+  .cb-body
+  :is(
+    [data-from-me="true"] + [data-from-me="true"],
+    [data-from-me="false"] + [data-from-me="false"]
+  ) {
+  border-radius: 4px 4px 4px 4px;
+}
+
+#chat-bot .cb-body [data-from-me="false"] {
+  background-color: var(--blue--md);
+  color: var(--white);
+  border-radius: 0 4px 4px 4px;
+}
+
+#chat-bot .cb-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+}
+#chat-bot input {
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: none;
+}
+#chat-bot button {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  color: var(--green--md);
+}
+#chat-bot .cb-button {
+  color: var(--white);
+  cursor: pointer;
+}
