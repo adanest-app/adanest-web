@@ -6,12 +6,15 @@ import Cookies from "js-cookie";
 function Comments({ postId, CardBody }) {
   const [comments, setComments] = useState([]);
   const ref = useRef(null);
-  const { post, get } = useFetch(`${import.meta.env.VITE_API_URL}comments`, {
-    cachePolicy: "no-cache",
-    headers: {
-      Authorization: `Bearer ${Cookies.get("access_token")}`,
-    },
-  });
+  const { post, get, del } = useFetch(
+    `${import.meta.env.VITE_API_URL}comments`,
+    {
+      cachePolicy: "no-cache",
+      headers: {
+        Authorization: `Bearer ${Cookies.get("access_token")}`,
+      },
+    }
+  );
 
   const handleKirim = () => {
     if (!ref.current.value) return;
@@ -32,6 +35,14 @@ function Comments({ postId, CardBody }) {
     });
   }, [postId]);
 
+  const handleDelete = (id) => {
+    del(id).then(() => {
+      get(`post/${postId}`).then((res) => {
+        setComments(res || []);
+      });
+    });
+  };
+
   return (
     <>
       <div className="post-comment-input">
@@ -47,7 +58,11 @@ function Comments({ postId, CardBody }) {
         </button>
       </div>
       {comments?.map((comment) => (
-        <CardBody key={comment._id} data={comment} />
+        <CardBody
+          key={comment._id}
+          data={comment}
+          handleDelete={handleDelete}
+        />
       ))}
     </>
   );
