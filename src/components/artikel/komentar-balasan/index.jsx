@@ -10,7 +10,7 @@ function KomentarBalasan() {
   const params = useParams();
   const ref = useRef(null);
   const [comments, setComments] = useState([]);
-  const { post, get } = useFetch("http://localhost:3000", {
+  const { post, get } = useFetch(import.meta.env.VITE_API_URL, {
     cachePolicy: "no-cache",
     headers: {
       Authorization: `Bearer ${Cookies.get("access_token")}`,
