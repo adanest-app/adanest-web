@@ -38,6 +38,7 @@
   bottom: 0;
   padding: 20px 32px;
   backdrop-filter: blur(8px) brightness(0.95);
+  width: 100%;
 }
 .artikel-populer .artikel-card-primary > div > h3 {
   color: var(--white);

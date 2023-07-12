@@ -10,7 +10,7 @@ function KomentarBalasan() {
   const params = useParams();
   const ref = useRef(null);
   const [comments, setComments] = useState([]);
-  const { post, get } = useFetch(import.meta.env.VITE_API_URL, {
+  const { post, get } = useFetch(`${import.meta.env.VITE_API_URL}comments`, {
     cachePolicy: "no-cache",
     headers: {
       Authorization: `Bearer ${Cookies.get("access_token")}`,
@@ -19,7 +19,7 @@ function KomentarBalasan() {
 
   const handleKirimKomentar = () => {
     if (!ref.current.value) return;
-    post("/comments", { content: ref.current.value, post: params.artikelId })
+    post({ content: ref.current.value, post: params.artikelId })
       .then(() => {
         window.location.reload();
       })
@@ -29,7 +29,7 @@ function KomentarBalasan() {
   };
 
   useEffect(() => {
-    get(`/comments/post/${params.artikelId}`).then((res) => {
+    get(`post/${params.artikelId}`).then((res) => {
       setComments(res);
     });
   }, []);
@@ -38,13 +38,23 @@ function KomentarBalasan() {
   const [showBalasan, setShowBalasan] = useState(false);
   const [show, setShow] = useState(false);
   const refBalasan = useRef(null);
+  const { post: _post, get: _get } = useFetch(
+    `${import.meta.env.VITE_API_URL}replies`,
+    {
+      cachePolicy: "no-cache",
+      headers: {
+        Authorization: `Bearer ${Cookies.get("access_token")}`,
+      },
+    }
+  );
+
   const handleShow = (ev) => {
     setShow(ev.target.dataset.forId);
   };
 
   const handleKirimBalasan = () => {
     if (!refBalasan.current.value) return;
-    post("/replies", { content: refBalasan.current.value, comment: show })
+    _post({ content: refBalasan.current.value, comment: show })
       .then(() => {
         window.location.reload();
       })
@@ -60,7 +70,7 @@ function KomentarBalasan() {
   };
   useEffect(() => {
     showBalasan &&
-      get(`/replies/comment/${showBalasan}`).then((res) => {
+      _get(`comment/${showBalasan}`).then((res) => {
         setReplies(res);
       });
   }, [showBalasan]);

@@ -12,6 +12,11 @@
   color: var(--gray--md);
   font-weight: 500;
   font-variation-settings: "wght" 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .artikel-author span:nth-child(3) {

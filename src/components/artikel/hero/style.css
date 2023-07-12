@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 48px 0px;
+  gap: 32px;
 }
 
 .artikel-hero h2 {
@@ -70,12 +71,17 @@
   gap: 20px;
 }
 
+.artikel-hero .indonesia-quote + div a {
+  flex-shrink: 0;
+}
+
 .artikel-hero .form-control {
   position: relative;
 }
 
 .artikel-hero input {
   border-radius: 100px !important;
+  width: 100% !important;
 }
 
 .artikel-hero .search-artikel-result {

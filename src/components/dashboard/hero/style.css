@@ -5,6 +5,7 @@
   width: 100%;
   align-items: center;
   padding: 100px 0;
+  gap: 32px;
 }
 
 .dashboard-hero div:last-child {

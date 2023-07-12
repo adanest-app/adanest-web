@@ -97,8 +97,8 @@ function BuatArtikel() {
         />
         {pratinjau ? (
           <SebuahArtikel
-            title={judul}
-            content={content}
+            title={judul || "Judul Belum Ada"}
+            content={content || "Konten Belum Ada"}
             owner={me}
             createdAt={new Date()}
             cover={cover}

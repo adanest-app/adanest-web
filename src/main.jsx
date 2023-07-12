@@ -7,6 +7,7 @@ import "./styles/reset.css";
 import "./styles/index.css";
 import "./styles/button.css";
 import "./styles/input.css";
+import "./styles/responsive.css";
 import "react-toastify/dist/ReactToastify.min.css";
 import TimeAgo from "javascript-time-ago";
 import id from "javascript-time-ago/locale/id.json";

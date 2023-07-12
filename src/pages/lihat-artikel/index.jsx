@@ -36,7 +36,7 @@ function LihatArtikel() {
             </>
           }
         />
-        {loading && <p>Loading...</p>}
+        {loading && <div className="full-height">Loading...</div>}
         {post?._id && <SebuahArtikel {...post} />}
 
         <KomentarBalasan />

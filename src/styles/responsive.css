@@ -1,0 +1,43 @@
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  :is(#header-primary, #header-secondary) div {
+    gap: 40px;
+  }
+
+  #hero div:first-child h2 {
+    font-size: 40px;
+  }
+
+  #hero > div:last-child img {
+    max-width: 500px;
+  }
+
+  .artikel-hero h1 {
+    font-size: 44px;
+    line-height: 58px;
+  }
+
+  .artikel-hero .h1-line-step span:first-child {
+    max-width: 465px;
+  }
+
+  .artikel-populer .artikel-card-primary {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 425px;
+  }
+}
