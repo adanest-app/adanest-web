@@ -108,6 +108,8 @@
   #forgot-password .forgot-password__form,
   #new-password .new-password__form {
     width: 100%;
+    max-width: fit-content;
+    margin: 0 auto;
   }
 
   #forgot-password .forgot-password__form,
