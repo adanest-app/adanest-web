@@ -34,10 +34,83 @@
   .container {
     max-width: 768px;
   }
+
+  #nav-desktop {
+    display: none !important;
+  }
+
+  .btn-mobile[data-nav="true"] ~ #nav-mobile {
+    display: flex !important;
+    right: 0;
+  }
+
+  .btn-mobile {
+    display: flex;
+  }
+
+  #homepage #hero {
+    flex-direction: column;
+  }
+
+  #homepage #hero > div:first-child {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  #homepage #hero > div:last-child img {
+    width: 100%;
+  }
+
+  #homepage #about > div {
+    flex-direction: column;
+  }
+
+  #homepage #about > div:last-child img {
+    width: 100%;
+  }
+
+  #homepage #why > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+  }
+
+  #homepage #why > div > div > div {
+    left: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #homepage #contact .form-control {
+    width: 100%;
+  }
+
+
+
+  footer > div {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+  }
+
+  footer > div:first-child > div:last-child > div {
+    justify-content: center;
+  }
+
+  footer > div:first-child > div:last-child > div .form-control {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     max-width: 425px;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  #homepage #team > div div img {
+    transform: scale(0.8);
   }
 }

@@ -19,4 +19,6 @@
 
 #about > div > div img {
   border-radius: 32px;
+  object-fit: cover;
+  width: 500px;
 }

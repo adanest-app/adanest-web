@@ -28,6 +28,7 @@ footer > div:first-child > :is(div:first-child, div:last-child) h1 {
 footer > div:first-child > div:first-child h1 {
   font-family: Pacifico, "sans-serif";
 }
+
 footer > div:first-child > :is(div:first-child, div:last-child) p {
   color: var(--gray--xs);
   font-size: 16px;
@@ -44,6 +45,7 @@ footer > div:first-child > div:last-child > div {
   align-items: center;
   margin-top: 30px;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 footer > div:last-child {

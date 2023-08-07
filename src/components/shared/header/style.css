@@ -7,10 +7,13 @@
 
 :is(#header-primary, #header-secondary) {
   padding: 16px 0;
+  position: relative;
 }
+
 :is(#header-primary, #header-secondary) .brand {
   gap: 4px;
 }
+
 :is(#header-primary, #header-secondary) .brand-name {
   font-family: "Pacifico", sans-serif;
   font-size: 32px;
@@ -82,12 +85,15 @@
   cursor: pointer;
   position: relative;
 }
+
 .user-profile-btn .dropdown-icon {
   transition: transform 0.3s linear;
 }
+
 .user-profile-btn:hover .dropdown-icon {
   transform: rotateX(180deg);
 }
+
 .user-profile-btn img {
   margin: 8px 0;
   flex-shrink: 0;
@@ -129,11 +135,44 @@
   background-color: var(--gray--md);
   color: #fff;
 }
+
 .user-profile-btn .dropdown-menu a:active {
   background-color: var(--gray--xl);
 }
+
 .user-profile-btn:hover .dropdown-menu,
 .user-profile-btn:focus-within .dropdown-menu {
   opacity: 1;
-  pointer-events: auto; /* tambahkan properti ini */
+  pointer-events: auto;
+  /* tambahkan properti ini */
+}
+
+#nav-mobile {
+  display: none !important;
+  position: absolute;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 100%;
+  border-radius: 8px;
+  padding: 20px 8px;
+
+}
+
+#nav-mobile :is(nav, div) {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.btn-mobile {
+  z-index: 1;
+  border: 2px solid var(--green--md);
+  color: var(--green--md);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  flex: none;
 }
