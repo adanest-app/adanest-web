@@ -85,7 +85,45 @@
     width: 100%;
   }
 
+  #login,
+  #create-account,
+  #forgot-password,
+  #new-password {
+    flex-direction: column;
+    padding: 8px !important;
+    gap: 32px;
+    text-align: center;
+    justify-content: flex-start;
+  }
 
+  #forgot-password,
+  #new-password {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+
+  }
+
+  #login .login-form,
+  #create-account .create-account-form,
+  #forgot-password .forgot-password__form,
+  #new-password .new-password__form {
+    width: 100%;
+  }
+
+  #forgot-password .forgot-password__form,
+  #new-password .new-password__form {
+    align-items: center;
+  }
+
+  :is(#login, #create-account, #forgot-password, #new-password) .form-control {
+    width: 100%;
+  }
+
+  #login > div:first-child img,
+  #forgot-password > div:last-child img,
+  #new-password > div:last-child img {
+    width: 100%;
+  }
 
   footer > div {
     flex-direction: column;
