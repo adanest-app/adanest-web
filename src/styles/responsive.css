@@ -187,7 +187,18 @@
     width: 100%;
   }
 
+  .konsultasi-hero {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
 
+  .konsultasi-hero .gambar img {
+    width: 100%;
+  }
+
+  .konsultasi-hero * {
+    text-align: center !important;
+  }
 
   footer > div {
     flex-direction: column;
@@ -259,6 +270,23 @@
   .post-card-right :is(.comment) div {
     width: 50px;
     height: 50px;
+  }
+
+  .konsultasi-swap {
+    position: fixed;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green--md);
+  }
+
+  .konsultasi-left {
+    max-width: none;
   }
 
   .modal-content {
