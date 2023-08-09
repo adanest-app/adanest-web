@@ -5,6 +5,7 @@
   font-variation-settings: "wght" 700;
   margin-bottom: 32px;
 }
+
 .artikel-populer h1 > span {
   color: var(--green--md);
   font-weight: 700;
@@ -40,6 +41,7 @@
   backdrop-filter: blur(8px) brightness(0.95);
   width: 100%;
 }
+
 .artikel-populer .artikel-card-primary > div > h3 {
   color: var(--white);
   font-size: 32px;
@@ -53,6 +55,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
+
 .artikel-populer .artikel-card-primary > div .artikel-author span {
   color: var(--white) !important;
 }
@@ -83,6 +86,7 @@
   width: 225px;
   height: 100%;
 }
+
 .artikel-populer .artikel-card-secondary > div > h3 {
   color: var(--gray--xl);
   overflow: hidden;

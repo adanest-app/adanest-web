@@ -151,11 +151,20 @@
   display: none !important;
   position: absolute;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.8);
   top: 100%;
   border-radius: 8px;
   padding: 20px 8px;
+  z-index: 2;
 
+}
+
+#header-primary #nav-mobile {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#header-secondary #nav-mobile {
+  background-color: var(--white);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 #nav-mobile :is(nav, div) {

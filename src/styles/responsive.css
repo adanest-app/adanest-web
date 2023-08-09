@@ -88,7 +88,9 @@
   #login,
   #create-account,
   #forgot-password,
-  #new-password {
+  #new-password,
+  .dashboard-hero,
+  .artikel-hero {
     flex-direction: column;
     padding: 8px !important;
     gap: 32px;
@@ -97,7 +99,8 @@
   }
 
   #forgot-password,
-  #new-password {
+  #new-password,
+  .artikel-hero {
     flex-direction: column-reverse;
     justify-content: flex-end;
 
@@ -117,15 +120,74 @@
     align-items: center;
   }
 
-  :is(#login, #create-account, #forgot-password, #new-password) .form-control {
+  :is(#login, #create-account, #forgot-password, #new-password, .artikel-hero, #form-buat-artikel > div:first-child) .form-control {
     width: 100%;
   }
 
   #login > div:first-child img,
   #forgot-password > div:last-child img,
-  #new-password > div:last-child img {
+  #new-password > div:last-child img,
+  .dashboard-hero > div:first-child img,
+  .artikel-hero > div:last-child img {
     width: 100%;
   }
+
+  .profile__settings :is(.profile__public, .profile__personal *) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  .profile__settings .profile__account-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .artikel-hero > div:first-child *:not(.form-control input) {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .artikel-hero > div:first-child h2 {
+    font-size: 30px;
+    line-height: normal;
+  }
+
+  .artikel-hero > div:first-child h1 {
+    font-size: 38px;
+    line-height: normal;
+  }
+
+  .artikel-hero > div:first-child p {
+    font-size: 16px;
+  }
+
+  .artikel-hero .h1-line-step {
+    display: none !important;
+  }
+
+  .artikel-hero > div:first-child > div:last-child {
+    flex-wrap: wrap;
+  }
+
+  #form-buat-artikel > div:first-child {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .artikel-populer .artikel-group {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .artikel-populer .artikel-group .artikel-card-primary {
+    width: 100%;
+  }
+
+
 
   footer > div {
     flex-direction: column;
@@ -148,6 +210,59 @@
     max-width: 425px;
     padding-left: 8px !important;
     padding-right: 8px !important;
+  }
+
+  #form-buat-artikel > div:first-child {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #chat-bot .cb-card {
+    position: fixed;
+    right: 0;
+    bottom: 90px;
+    top: 0;
+    width: 100%;
+    left: 0;
+  }
+
+  .artikel-populer .artikel-group > div:last-child {
+    flex-direction: column;
+  }
+
+  .artikel-populer .artikel-group .artikel-card-secondary > img {
+    width: 100%;
+  }
+
+  .artikel-populer .artikel-group .artikel-card-secondary {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .post-card-center-header {
+    flex-wrap: wrap;
+  }
+
+  .post-card-center-header :is(*, span),
+  .post-card-center-body p {
+    font-size: 18px !important;
+  }
+
+  .post-time-ago {
+    display: none;
+  }
+
+  .post-time-ago-mobile {
+    display: block;
+  }
+
+  .post-card-right :is(.comment) div {
+    width: 50px;
+    height: 50px;
+  }
+
+  .modal-content {
+    width: 100%;
   }
 
   #homepage #team > div div img {

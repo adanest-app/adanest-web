@@ -60,6 +60,7 @@
   margin-bottom: 8px;
   display: flex;
 }
+
 .post-card-center-header span:first-child {
   color: var(--green--md);
   font-size: 24px;
@@ -74,16 +75,22 @@
   line-height: normal;
 }
 
-.post-card-center-header :is(.post-time-ago, .post-delete-icon) {
+.post-time-ago-mobile {
+  display: none;
+}
+
+.post-card-center-header :is(.post-time-ago, .post-time-ago-mobile, .post-delete-icon) {
   color: var(--gray--md);
   font-size: 24px;
   line-height: normal;
 }
+
 .post-card-center-header .post-delete-icon {
   cursor: pointer;
   color: var(--red--md);
   font-size: 29px;
 }
+
 .post-card-center-body {
   border-radius: 0px 32px 32px 32px;
   background: var(--green--xs);
@@ -104,14 +111,14 @@
   gap: 16px;
 }
 
-.post-card-right :is(.like, .comment) {
+.post-card-right :is(.comment) {
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: center;
 }
 
-.post-card-right :is(.like, .comment) div {
+.post-card-right :is(.comment) div {
   border-radius: 52px;
   border: 2px solid var(--green--md);
   width: 52px;

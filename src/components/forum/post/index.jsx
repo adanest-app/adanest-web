@@ -1,15 +1,15 @@
-import "./style.css";
-import { useEffect } from "react";
-import { AiOutlineComment } from "react-icons/ai";
-import { useFetch } from "use-http";
-import Cookies from "js-cookie";
-import ReactTimeAgo from "react-time-ago";
-import { Link } from "react-router-dom";
-import { MdDelete } from "react-icons/md";
-import Comments from "../comment";
+import Cookies from 'js-cookie'
+import { useEffect } from 'react'
+import { AiOutlineComment } from 'react-icons/ai'
+import { MdDelete } from 'react-icons/md'
+import { Link } from 'react-router-dom'
+import ReactTimeAgo from 'react-time-ago'
+import { useFetch } from 'use-http'
+import Comments from '../comment'
+import './style.css'
 
 function CardBody({ data, handleDelete = () => {} }) {
-  const me = JSON.parse(Cookies.get("me"));
+  const me = JSON.parse(Cookies.get('me'))
   return (
     <div className="post-card-body">
       <div className="post-card-left">
@@ -22,12 +22,10 @@ function CardBody({ data, handleDelete = () => {} }) {
           <span className="post-time-ago">
             <ReactTimeAgo date={new Date(data?.createdAt)} />
           </span>
-          {me.id === data?.owner?._id && (
-            <MdDelete
-              onClick={() => handleDelete(data?._id)}
-              className="post-delete-icon"
-            />
-          )}
+          <span className="post-time-ago-mobile">
+            <ReactTimeAgo date={new Date(data?.createdAt)} timeStyle={'mini-now'} />
+          </span>
+          {me.id === data?.owner?._id && <MdDelete onClick={() => handleDelete(data?._id)} className="post-delete-icon" />}
         </div>
         <div className="post-card-center-body">
           <p>{data?.content}</p>
@@ -43,71 +41,64 @@ function CardBody({ data, handleDelete = () => {} }) {
         </Link>
       </div>
     </div>
-  );
+  )
 }
 
 function Card({ children }) {
-  return <div className="post-card">{children}</div>;
+  return <div className="post-card">{children}</div>
 }
 
 export function Search({ setPosts }) {
   const { get } = useFetch(`${import.meta.env.VITE_API_URL}posts`, {
-    cachePolicy: "no-cache",
+    cachePolicy: 'no-cache',
     headers: {
-      Authorization: `Bearer ${Cookies.get("access_token")}`,
+      Authorization: `Bearer ${Cookies.get('access_token')}`,
     },
-  });
+  })
   const handleSearch = (e) => {
-    if (e.key === "Enter") {
-      get(
-        `search?sort=desc&sortField=createdAt&type=forum&q=${e.target.value}`
-      ).then((res) => {
-        setPosts(res || []);
-      });
+    if (e.key === 'Enter') {
+      get(`search?sort=desc&sortField=createdAt&type=forum&q=${e.target.value}`).then((res) => {
+        setPosts(res || [])
+      })
     }
-  };
+  }
   return (
     <div className="forum-search">
       <div className="form-control form-control-outline">
-        <input
-          type="text"
-          placeholder=" "
-          id="input-search"
-          onKeyDown={handleSearch}
-        />
+        <input type="text" placeholder=" " id="input-search" onKeyDown={handleSearch} />
         <label htmlFor="input-search">Cari Postingan</label>
       </div>
     </div>
-  );
+  )
 }
 
 function Posts({ setPosts, postId = null, posts }) {
   const { get, del } = useFetch(`${import.meta.env.VITE_API_URL}posts`, {
-    cachePolicy: "no-cache",
+    cachePolicy: 'no-cache',
     headers: {
-      Authorization: `Bearer ${Cookies.get("access_token")}`,
+      Authorization: `Bearer ${Cookies.get('access_token')}`,
     },
-  });
+  })
 
   useEffect(() => {
     postId
       ? get(`p/${postId}`).then((res) => {
-          res && setPosts([res]);
+          res && setPosts([res])
         })
       : get(`search?sort=desc&sortField=createdAt&type=forum`).then((res) => {
-          setPosts(res || []);
-        });
-  }, [postId]);
+          setPosts(res || [])
+        })
+  }, [postId])
 
   const handleDelete = (id) => {
     del(id).then(() => {
       get(`search?sort=desc&sortField=createdAt&type=forum`).then((res) => {
-        setPosts(res || []);
-      });
-    });
-  };
+        setPosts(res || [])
+      })
+    })
+  }
   return (
-    <div className={`forum-posts ${postId && "is-forum-comment"} `}>
+    <div className={`forum-posts ${postId && 'is-forum-comment'} `}>
       {posts?.map((post) => (
         <Card key={post._id}>
           <CardBody data={post} handleDelete={handleDelete} />
@@ -115,6 +106,6 @@ function Posts({ setPosts, postId = null, posts }) {
         </Card>
       ))}
     </div>
-  );
+  )
 }
-export default Posts;
+export default Posts
