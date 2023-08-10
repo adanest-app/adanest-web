@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
+import { toast } from "react-toastify";
 import Container from "../container";
 import facebookImg from "./facebook.png";
 import instagramImg from "./instagram.png";
@@ -14,6 +15,24 @@ function FooterContainer({ children }) {
 }
 
 function FooterChild() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+    const id = toast.loading("Mengirim data...");
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        myForm.reset();
+        toast.success("Email berhasil disimpan");
+      })
+      .catch(() => toast.error("Gagal menyimpan Email"))
+      .finally(() => toast.dismiss(id));
+  };
   return (
     <footer>
       <div>
@@ -25,13 +44,16 @@ function FooterChild() {
           <h1>Get notified when we launch!</h1>
           <p>Stay up to date with the latest news, announcements, and articles.</p>
           <div>
-            <div className="form-control">
-              <input type="email" id="email" placeholder=" " />
-              <label htmlFor="email">Enter your email</label>
-            </div>
-            <button type="submit" className="btn btn-filled btn-filled-green">
-              Subscribe
-            </button>
+            <form name="subscribe" method="POST" data-netlify={true} onSubmit={handleSubmit}>
+              <input type="hidden" name="form-name" value="subscribe" />
+              <div className="form-control">
+                <input type="email" id="email" placeholder=" " />
+                <label htmlFor="email">Enter your email</label>
+              </div>
+              <button type="submit" className="btn btn-filled btn-filled-green">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </div>
