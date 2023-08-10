@@ -34,39 +34,37 @@ function FooterChild() {
       .finally(() => toast.dismiss(id));
   };
   return (
-    <form name="subscribe" method="POST" data-netlify={true} onSubmit={handleSubmit}>
-      <footer>
+    <footer>
+      <div>
         <div>
-          <div>
-            <h1>Adanest</h1>
-            <p>Bersama-sama, kita akan membangun fondasi yang kuat untuk kehidupan yang lebih sehat, lebih bahagia, dan bebas dari ketergantungan yang merusak.</p>
-          </div>
-          <div>
-            <h1>Get notified when we launch!</h1>
-            <p>Stay up to date with the latest news, announcements, and articles.</p>
-            <div>
-              <input type="hidden" name="form-name" value="subscribe" />
-              <div className="form-control">
-                <input type="email" id="email" placeholder=" " />
-                <label htmlFor="email">Enter your email</label>
-              </div>
-              <button type="submit" className="btn btn-filled btn-filled-green">
-                Subscribe
-              </button>
+          <h1>Adanest</h1>
+          <p>Bersama-sama, kita akan membangun fondasi yang kuat untuk kehidupan yang lebih sehat, lebih bahagia, dan bebas dari ketergantungan yang merusak.</p>
+        </div>
+        <div>
+          <h1>Get notified when we launch!</h1>
+          <p>Stay up to date with the latest news, announcements, and articles.</p>
+          <form name="subscribe" method="POST" data-netlify={true} onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="subscribe" />
+            <div className="form-control">
+              <input type="email" id="email" placeholder=" " />
+              <label htmlFor="email">Enter your email</label>
             </div>
-          </div>
+            <button type="submit" className="btn btn-filled btn-filled-green">
+              Subscribe
+            </button>
+          </form>
         </div>
-        <hr />
+      </div>
+      <hr />
+      <div>
+        <p>@Copyright ADANEST. All Rights Reserved</p>
         <div>
-          <p>@Copyright ADANEST. All Rights Reserved</p>
-          <div>
-            <img src={twitterImg} alt="Twitter" />
-            <img src={instagramImg} alt="Instagram" />
-            <img src={facebookImg} alt="Facebook" />
-          </div>
+          <img src={twitterImg} alt="Twitter" />
+          <img src={instagramImg} alt="Instagram" />
+          <img src={facebookImg} alt="Facebook" />
         </div>
-      </footer>
-    </form>
+      </div>
+    </footer>
   );
 }
 

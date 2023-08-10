@@ -39,7 +39,7 @@ footer > div:first-child > div:first-child p {
   max-width: 330px;
 }
 
-footer > div:first-child > div:last-child > div {
+footer > div:first-child > div:last-child > form {
   display: flex;
   justify-content: space-between;
   align-items: center;
