@@ -34,17 +34,17 @@ function FooterChild() {
       .finally(() => toast.dismiss(id));
   };
   return (
-    <footer>
-      <div>
+    <form name="subscribe" method="POST" data-netlify={true} onSubmit={handleSubmit}>
+      <footer>
         <div>
-          <h1>Adanest</h1>
-          <p>Bersama-sama, kita akan membangun fondasi yang kuat untuk kehidupan yang lebih sehat, lebih bahagia, dan bebas dari ketergantungan yang merusak.</p>
-        </div>
-        <div>
-          <h1>Get notified when we launch!</h1>
-          <p>Stay up to date with the latest news, announcements, and articles.</p>
           <div>
-            <form name="subscribe" method="POST" data-netlify={true} onSubmit={handleSubmit}>
+            <h1>Adanest</h1>
+            <p>Bersama-sama, kita akan membangun fondasi yang kuat untuk kehidupan yang lebih sehat, lebih bahagia, dan bebas dari ketergantungan yang merusak.</p>
+          </div>
+          <div>
+            <h1>Get notified when we launch!</h1>
+            <p>Stay up to date with the latest news, announcements, and articles.</p>
+            <div>
               <input type="hidden" name="form-name" value="subscribe" />
               <div className="form-control">
                 <input type="email" id="email" placeholder=" " />
@@ -53,20 +53,20 @@ function FooterChild() {
               <button type="submit" className="btn btn-filled btn-filled-green">
                 Subscribe
               </button>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-      <hr />
-      <div>
-        <p>@Copyright ADANEST. All Rights Reserved</p>
+        <hr />
         <div>
-          <img src={twitterImg} alt="Twitter" />
-          <img src={instagramImg} alt="Instagram" />
-          <img src={facebookImg} alt="Facebook" />
+          <p>@Copyright ADANEST. All Rights Reserved</p>
+          <div>
+            <img src={twitterImg} alt="Twitter" />
+            <img src={instagramImg} alt="Instagram" />
+            <img src={facebookImg} alt="Facebook" />
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </form>
   );
 }
 
