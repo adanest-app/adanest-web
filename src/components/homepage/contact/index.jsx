@@ -1,12 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 function Contact() {
+  const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => navigate("/thank-you/"))
+      .catch((error) => alert(error));
+  };
   return (
     <div id="contact">
       <h3>Hubungi kami</h3>
       <p>Jika Anda ada saran dan kritik, Jangan ragu dan malu untuk menghubungi kami</p>
-      <form name="contact" method="POST" data-netlify={true}>
-        <input type="hidden" name="contact" value="contact" />
+      <form name="contact" method="POST" data-netlify={true} onSubmit={handleSubmit}>
+        <input type="hidden" name="form-name" value="contact" />
         <div className="form-control form-control-outline">
           <input type="email" id="contact-email" name="email" placeholder=" " />
           <label htmlFor="contact-email">Email</label>
