@@ -47,11 +47,9 @@ function FooterChild() {
             <input type="hidden" name="form-name" value="subscribe" />
             <div className="form-control">
               <input type="email" id="email-subscribe" name="email" placeholder=" " />
-              <label htmlFor="email">Enter your email</label>
+              <label htmlFor="email-subscribe">Enter your email</label>
             </div>
-            <button type="submit" className="btn btn-filled btn-filled-green">
-              Subscribe
-            </button>
+            <button className="btn btn-filled btn-filled-green">Subscribe</button>
           </form>
         </div>
       </div>
