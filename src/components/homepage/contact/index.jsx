@@ -6,6 +6,7 @@ function Contact() {
       <h3>Hubungi kami</h3>
       <p>Jika Anda ada saran dan kritik, Jangan ragu dan malu untuk menghubungi kami</p>
       <form name="contact" method="POST" data-netlify={true}>
+        <input type="hidden" name="contact" value="contact" />
         <div className="form-control form-control-outline">
           <input type="email" id="contact-email" name="email" placeholder=" " />
           <label htmlFor="contact-email">Email</label>
