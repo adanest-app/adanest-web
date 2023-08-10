@@ -50,6 +50,7 @@
 
   #homepage #hero {
     flex-direction: column;
+    padding-top: 16px;
   }
 
   #homepage #hero > div:first-child {
@@ -295,5 +296,87 @@
 
   #homepage #team > div div img {
     transform: scale(0.8);
+  }
+
+  #hero div:first-child h2 {
+    line-height: 48px;
+    font-size: 36px;
+  }
+
+  :is(#about, #why, #services, #team, #contact) h3 {
+    font-size: 30px;
+  }
+
+  .dashboard-hero div:last-child h2 {
+    font-size: 24px;
+    line-height: normal;
+  }
+
+  .dashboard-hero div:last-child h1 {
+    font-size: 32px;
+    line-height: normal;
+  }
+
+  .dashboard-hero div:last-child h3 {
+    font-size: 20px;
+    line-height: normal;
+  }
+
+  .dashboard-hero div:last-child p {
+    font-size: 18px;
+  }
+
+
+  .artikel-hero > div:first-child h2 {
+    font-size: 26px;
+  }
+
+  .artikel-hero > div:first-child h1 {
+    font-size: 34px;
+  }
+
+  .artikel-populer,
+  .artikel-terbaru {
+    margin-top: 32px;
+  }
+
+  .artikel-populer h1,
+  .artikel-terbaru h1 {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  #sebuah-artikel .artikel-judul {
+    font-size: 28px;
+  }
+
+  .konsultasi-hero .deskripsi h1 {
+    font-size: 32px;
+  }
+
+  .konsultasi-hero .deskripsi h3 {
+    font-size: 24px
+  }
+
+  .konsultasi-hero .deskripsi p {
+    font-size: 18px;
+  }
+
+  .konsultasi-hero {
+    padding-top: 10px;
+  }
+
+  #forgot-password .forgot-password__form {
+    gap: 8px;
+  }
+
+  .forgot-password__title {
+    font-size: 36px;
+    line-height: normal;
+  }
+
+  .forgot-password__desc {
+    font-size: 18px;
+
   }
 }
