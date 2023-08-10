@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react-refresh/only-export-components */
 import { toast } from "react-toastify";
 import Container from "../container";
@@ -43,7 +44,7 @@ function FooterChild() {
         <div>
           <h1>Get notified when we launch!</h1>
           <p>Stay up to date with the latest news, announcements, and articles.</p>
-          <form name="subscribe" method="POST" data-netlify={true} onSubmit={handleSubmit}>
+          <form name="subscribe" method="POST" data-netlify={true} netlify onSubmit={handleSubmit}>
             <input type="hidden" name="form-name" value="subscribe" />
             <div className="form-control">
               <input type="email" id="email-subscribe" name="email-subscribe" placeholder=" " />
