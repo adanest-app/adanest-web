@@ -46,7 +46,7 @@ function FooterChild() {
           <form name="subscribe" method="POST" data-netlify={true} onSubmit={handleSubmit}>
             <input type="hidden" name="form-name" value="subscribe" />
             <div className="form-control">
-              <input type="email" id="email-subscribe" name="email" placeholder=" " />
+              <input type="email" id="email-subscribe" name="email-subscribe" placeholder=" " />
               <label htmlFor="email-subscribe">Enter your email</label>
             </div>
             <button className="btn btn-filled btn-filled-green">Subscribe</button>
