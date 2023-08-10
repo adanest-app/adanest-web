@@ -1,21 +1,23 @@
-import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./style.css";
 
 function Contact() {
-  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-
+    toast.loading("Mengirim data...");
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => navigate("/thank-you/"))
-      .catch((error) => alert(error));
+      .then(() => {
+        myForm.reset();
+        toast.success("Pesan berhasil dikirim");
+      })
+      .catch(() => toast.error("Gagal mengirim pesan"));
   };
   return (
     <div id="contact">
