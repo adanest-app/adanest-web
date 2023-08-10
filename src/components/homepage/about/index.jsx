@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import aboutPng from "./about.png";
 import "./style.css";
 
@@ -16,7 +17,9 @@ function About() {
             Sejak didirikan pada tahun 2023, kami telah mengabdikan diri untuk meningkatkan kualitas hidup masyarakat melalui pendekatan holistik terhadap kesehatan. Kami memahami bahwa kesehatan
             adalah aset berharga dan berkomitmen untuk memberikan panduan yang mendalam dan terpercaya untuk menjaga keseimbangan fisik, mental, dan emosional.
           </p>
-          <button className="btn btn-outline btn-outline-green">Ayo Gabung!</button>
+          <Link to="/create-account">
+            <button className="btn btn-outline btn-outline-green">Ayo Gabung!</button>
+          </Link>
         </div>
         <div>
           <img src={aboutPng} alt="About" />
