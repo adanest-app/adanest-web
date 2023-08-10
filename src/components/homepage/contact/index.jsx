@@ -25,7 +25,7 @@ function Contact() {
     <div id="contact">
       <h3>Hubungi kami</h3>
       <p>Jika Anda ada saran dan kritik, Jangan ragu dan malu untuk menghubungi kami</p>
-      <form name="contact" method="POST" data-netlify={true} netlify onSubmit={handleSubmit}>
+      <form name="contact" method="POST" data-netlify={true} onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <div className="form-control form-control-outline">
           <input type="email" id="contact-email" name="email" placeholder=" " />
