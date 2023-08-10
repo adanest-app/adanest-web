@@ -1,7 +1,7 @@
+import Hero from "../../components/konsultasi/hero";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import Hero from "../../components/konsultasi/hero";
 import { useEffect } from "react";
 
 function Konsultasi() {

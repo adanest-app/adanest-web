@@ -1,4 +1,3 @@
- 
 import "./style.css";
 
 function Modal({ isOpen, toggleModal, title, children, actionBtn }) {
@@ -10,10 +9,7 @@ function Modal({ isOpen, toggleModal, title, children, actionBtn }) {
             <ModalHeader>{title}</ModalHeader>
             <ModalBody>{children}</ModalBody>
             <ModalFooter>
-              <button
-                onClick={toggleModal}
-                className="btn btn-sm btn-outline btn-outline-green"
-              >
+              <button onClick={toggleModal} className="btn btn-sm btn-outline btn-outline-green">
                 Batal
               </button>
               {actionBtn}

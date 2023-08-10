@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
 import Author from "../author";
 import "./style.css";
-import { useFetch } from "use-http";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useFetch } from "use-http";
+
 function Populer() {
   const [posts, setPosts] = useState([]);
   const { get } = useFetch(`${import.meta.env.VITE_API_URL}posts/search`, {});

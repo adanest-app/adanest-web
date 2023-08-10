@@ -1,10 +1,9 @@
-import { useParams } from "react-router-dom";
 import "./style.css";
-import { useRef, useState, useEffect } from "react";
 import Cookies from "js-cookie";
-import { useFetch } from "use-http";
-
+import { useRef, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ReactTimeAgo from "react-time-ago";
+import { useFetch } from "use-http";
 
 function KomentarBalasan() {
   const params = useParams();
@@ -38,15 +37,12 @@ function KomentarBalasan() {
   const [showBalasan, setShowBalasan] = useState(false);
   const [show, setShow] = useState(false);
   const refBalasan = useRef(null);
-  const { post: _post, get: _get } = useFetch(
-    `${import.meta.env.VITE_API_URL}replies`,
-    {
-      cachePolicy: "no-cache",
-      headers: {
-        Authorization: `Bearer ${Cookies.get("access_token")}`,
-      },
-    }
-  );
+  const { post: _post, get: _get } = useFetch(`${import.meta.env.VITE_API_URL}replies`, {
+    cachePolicy: "no-cache",
+    headers: {
+      Authorization: `Bearer ${Cookies.get("access_token")}`,
+    },
+  });
 
   const handleShow = (ev) => {
     setShow(ev.target.dataset.forId);
@@ -64,9 +60,7 @@ function KomentarBalasan() {
   };
 
   const handleShowBalasan = (ev) => {
-    setShowBalasan(
-      showBalasan !== ev.target.dataset.forId ? ev.target.dataset.forId : false
-    );
+    setShowBalasan(showBalasan !== ev.target.dataset.forId ? ev.target.dataset.forId : false);
   };
   useEffect(() => {
     showBalasan &&
@@ -82,10 +76,7 @@ function KomentarBalasan() {
           <input ref={ref} type="text" placeholder=" " id="input-komentar" />
           <label htmlFor="input-komentar">Tulis komentar</label>
         </div>
-        <button
-          onClick={handleKirimKomentar}
-          className="btn btn-sm btn-filled btn-filled-yellow"
-        >
+        <button onClick={handleKirimKomentar} className="btn btn-sm btn-filled btn-filled-yellow">
           Kirim
         </button>
       </div>
@@ -109,27 +100,14 @@ function KomentarBalasan() {
                     {show === comment._id ? (
                       <div className="komentar-balasan-input">
                         <div className="form-control form-control-outline">
-                          <input
-                            type="text"
-                            placeholder=" "
-                            ref={refBalasan}
-                            id="input-balas-kompentar"
-                          />
-                          <label htmlFor="input-balas-kompentar">
-                            Tulis Balasan
-                          </label>
+                          <input type="text" placeholder=" " ref={refBalasan} id="input-balas-kompentar" />
+                          <label htmlFor="input-balas-kompentar">Tulis Balasan</label>
                         </div>
                         <div>
-                          <button
-                            onClick={handleKirimBalasan}
-                            className="btn btn-sm btn-filled btn-filled-green"
-                          >
+                          <button onClick={handleKirimBalasan} className="btn btn-sm btn-filled btn-filled-green">
                             Balas
                           </button>
-                          <button
-                            onClick={handleShow}
-                            className="btn btn-sm btn-outline btn-outline-green"
-                          >
+                          <button onClick={handleShow} className="btn btn-sm btn-outline btn-outline-green">
                             Batal
                           </button>
                         </div>
@@ -139,10 +117,7 @@ function KomentarBalasan() {
                         <span data-for-id={comment._id} onClick={handleShow}>
                           Balas
                         </span>
-                        <span
-                          data-for-id={comment._id}
-                          onClick={handleShowBalasan}
-                        >
+                        <span data-for-id={comment._id} onClick={handleShowBalasan}>
                           Lihat Balasan
                         </span>
                       </>
@@ -161,9 +136,7 @@ function KomentarBalasan() {
                             <h1>
                               {reply.owner.username}
                               <span>
-                                <ReactTimeAgo
-                                  date={new Date(reply.createdAt)}
-                                />
+                                <ReactTimeAgo date={new Date(reply.createdAt)} />
                               </span>
                             </h1>
                             <p>{reply.content}</p>

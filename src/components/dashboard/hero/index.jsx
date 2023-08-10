@@ -1,8 +1,9 @@
-import "./style.css";
 import dashboardImg from "./dashboard.png";
+import "./style.css";
 import jsCookie from "js-cookie";
-import { useFetch } from "use-http";
 import { useEffect, useState } from "react";
+import { useFetch } from "use-http";
+
 function Hero() {
   const uid = jsCookie.get("uid");
   const [user, setUser] = useState({});
@@ -31,11 +32,7 @@ function Hero() {
         <h2>Selamat Datang, kembali!</h2>
         <h1>{user.fullname}</h1>
         <h3>Temukan Dukungan dan Kesempatan Pemulihan di Halaman Profilmu</h3>
-        <p>
-          Hii, {user.firstName}! Kami senang melihatmu kembali. Bagaimana
-          kabarmu? Semoga harimu selalu cerah dan penuh kebahagiaan di mana pun
-          kamu berada.
-        </p>
+        <p>Hii, {user.firstName}! Kami senang melihatmu kembali. Bagaimana kabarmu? Semoga harimu selalu cerah dan penuh kebahagiaan di mana pun kamu berada.</p>
       </div>
     </div>
   );

@@ -1,38 +1,38 @@
-import Cookies from 'js-cookie'
-import { useRef } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { useFetch } from 'use-http'
-import Modal from '../../shared/modal'
-import './style.css'
+import Modal from "../../shared/modal";
+import "./style.css";
+import Cookies from "js-cookie";
+import { useRef } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useFetch } from "use-http";
 
 function ModalBuatPost({ isOpen, toggleModal, setPosts }) {
-  const [searchParams] = useSearchParams()
-  const ref = useRef(null)
+  const [searchParams] = useSearchParams();
+  const ref = useRef(null);
   const { get, post } = useFetch(`${import.meta.env.VITE_API_URL}posts`, {
-    cachePolicy: 'no-cache',
+    cachePolicy: "no-cache",
     headers: {
-      Authorization: `Bearer ${Cookies.get('access_token')}`,
+      Authorization: `Bearer ${Cookies.get("access_token")}`,
     },
-  })
+  });
   const handleKirim = () => {
-    if (!ref.current.value) return
+    if (!ref.current.value) return;
     post({
-      title: 'Forum',
-      cover: 'https://picsum.photos/1',
+      title: "Forum",
+      cover: "https://picsum.photos/1",
       content: ref.current.value,
-      type: 'forum',
+      type: "forum",
     }).then(() => {
-      toggleModal()
+      toggleModal();
       get(`search?sort=desc&sortField=createdAt&type=forum`).then((res) => {
-        if (searchParams.get('id')) setPosts(res.filter((post) => post._id === searchParams.get('id')) || [])
-      })
-    })
-  }
+        if (searchParams.get("id")) setPosts(res.filter((post) => post._id === searchParams.get("id")) || []);
+      });
+    });
+  };
   return (
     <Modal
       isOpen={isOpen}
       toggleModal={toggleModal}
-      title={'Buat Postingan'}
+      title={"Buat Postingan"}
       actionBtn={
         <button onClick={handleKirim} className="btn btn-sm btn-filled btn-filled-green">
           Kirim
@@ -45,7 +45,7 @@ function ModalBuatPost({ isOpen, toggleModal, setPosts }) {
         </div>
       </div>
     </Modal>
-  )
+  );
 }
 
-export default ModalBuatPost
+export default ModalBuatPost;

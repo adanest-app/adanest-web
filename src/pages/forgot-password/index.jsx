@@ -1,17 +1,14 @@
-import "./style.css";
 import Container from "../../components/shared/container";
 import forgotPasswordImg from "./forgot-password.png";
+import "./style.css";
 import { useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { useFetch } from "use-http";
 
 function forgotPassword() {
-  const { post, response } = useFetch(
-    `${import.meta.env.VITE_API_URL}auth/forgot-password`,
-    {
-      cachePolicy: "no-cache",
-    }
-  );
+  const { post, response } = useFetch(`${import.meta.env.VITE_API_URL}auth/forgot-password`, {
+    cachePolicy: "no-cache",
+  });
   const ref = useRef(null);
   const sendEmail = async () => {
     const email = ref.current.value;
@@ -40,10 +37,7 @@ function forgotPassword() {
             <label htmlFor="email">Enter Email Address</label>
           </div>
           <div>
-            <button
-              onClick={sendEmail}
-              className="btn btn-filled btn-filled-gray"
-            >
+            <button onClick={sendEmail} className="btn btn-filled btn-filled-gray">
               Send Email
             </button>
           </div>

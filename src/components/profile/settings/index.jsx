@@ -1,20 +1,17 @@
-import { MdEdit } from "react-icons/md";
+import toastConf from "../../shared/toast/toast.conf";
 import "./style.css";
 import Cookies from "js-cookie";
-import { useFetch } from "use-http";
+import { MdEdit } from "react-icons/md";
 import { toast } from "react-toastify";
-import toastConf from "../../shared/toast/toast.conf";
+import { useFetch } from "use-http";
 
 function ProfileSettings({ toggleModal, me }) {
-  const { post } = useFetch(
-    `${import.meta.env.VITE_API_URL}users/upload/avatar`,
-    {
-      cachePolicy: "no-cache",
-      headers: {
-        Authorization: `Bearer ${Cookies.get("access_token")}`,
-      },
-    }
-  );
+  const { post } = useFetch(`${import.meta.env.VITE_API_URL}users/upload/avatar`, {
+    cachePolicy: "no-cache",
+    headers: {
+      Authorization: `Bearer ${Cookies.get("access_token")}`,
+    },
+  });
   const handleUpload = async (ev) => {
     const formData = new FormData();
     formData.append("file", ev.target.files[0]);
@@ -59,11 +56,7 @@ function ProfileSettings({ toggleModal, me }) {
           <p className="bio">{me.bio}</p>
         </div>
         <div className="profile__action">
-          <button
-            onClick={toggleModal}
-            data-for="profile__public"
-            className="btn btn-filled btn-sm btn-filled-green"
-          >
+          <button onClick={toggleModal} data-for="profile__public" className="btn btn-filled btn-sm btn-filled-green">
             Edit
           </button>
         </div>
@@ -72,11 +65,7 @@ function ProfileSettings({ toggleModal, me }) {
         <div className="profile__account">
           <div className="profile__account-header">
             <h1>Account Information</h1>
-            <button
-              onClick={toggleModal}
-              data-for="profile__personal"
-              className="btn btn-filled btn-filled-green btn-sm"
-            >
+            <button onClick={toggleModal} data-for="profile__personal" className="btn btn-filled btn-filled-green btn-sm">
               Edit
             </button>
           </div>

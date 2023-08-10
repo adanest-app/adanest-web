@@ -1,29 +1,23 @@
-import "./style.css";
 import Container from "../../components/shared/container";
 import newPasswordImg from "./new-password.png";
+import "./style.css";
 import { useEffect, useRef } from "react";
-import { useFetch } from "use-http";
-import { toast } from "react-toastify";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useFetch } from "use-http";
 
 function NewPassword() {
   const [searchParams] = useSearchParams();
-  const { put, response } = useFetch(
-    `${import.meta.env.VITE_API_URL}auth/reset-password`,
-    {
-      cachePolicy: "no-cache",
-    }
-  );
+  const { put, response } = useFetch(`${import.meta.env.VITE_API_URL}auth/reset-password`, {
+    cachePolicy: "no-cache",
+  });
   const ref = useRef(null);
   const newRef = useRef(null);
   const navigate = useNavigate();
   const handleChangePassword = async () => {
-    if (searchParams.get("token") === null)
-      return toast.error("Token tidak ada");
-    if (ref.current.value !== newRef.current.value)
-      return toast.error("Password tidak sama");
-    if (ref.current.value.length < 8)
-      return toast.error("Password minimal 8 karakter");
+    if (searchParams.get("token") === null) return toast.error("Token tidak ada");
+    if (ref.current.value !== newRef.current.value) return toast.error("Password tidak sama");
+    if (ref.current.value.length < 8) return toast.error("Password minimal 8 karakter");
     const id = toast.loading("Changing password");
     await put({
       password: ref.current.value,
@@ -52,19 +46,11 @@ function NewPassword() {
             <label htmlFor="password">Password</label>
           </div>
           <div className="form-control">
-            <input
-              ref={newRef}
-              type="password"
-              id="confirm-password"
-              placeholder=" "
-            />
+            <input ref={newRef} type="password" id="confirm-password" placeholder=" " />
             <label htmlFor="confirm-password">Confirm Password</label>
           </div>
           <div>
-            <button
-              onClick={handleChangePassword}
-              className="btn btn-filled btn-filled-yellow"
-            >
+            <button onClick={handleChangePassword} className="btn btn-filled btn-filled-yellow">
               Change Password
             </button>
           </div>

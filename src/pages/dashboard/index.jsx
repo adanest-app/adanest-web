@@ -1,7 +1,7 @@
+import Hero from "../../components/dashboard/hero";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import Hero from "../../components/dashboard/hero";
 import { useEffect } from "react";
 
 function Dashboard() {

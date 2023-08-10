@@ -1,15 +1,15 @@
 /* eslint-disable react-refresh/only-export-components */
-import { default as Cookies, default as jsCookie } from 'js-cookie'
-import { useEffect, useState } from 'react'
-import { MdArrowDropDown, MdClose, MdMenu } from 'react-icons/md'
-import { Link } from 'react-router-dom'
-import { useFetch } from 'use-http'
-import brand1 from './brand-1.svg'
-import brand2 from './brand-2.svg'
-import './style.css'
+import brand1 from "./brand-1.svg";
+import brand2 from "./brand-2.svg";
+import "./style.css";
+import { default as Cookies, default as jsCookie } from "js-cookie";
+import { useEffect, useState } from "react";
+import { MdArrowDropDown, MdClose, MdMenu } from "react-icons/md";
+import { Link } from "react-router-dom";
+import { useFetch } from "use-http";
 
 function Header({ navs, leftAddon, rightAddon, id }) {
-  const [nav, setNav] = useState(false)
+  const [nav, setNav] = useState(false);
 
   return (
     <header id={id}>
@@ -21,7 +21,7 @@ function Header({ navs, leftAddon, rightAddon, id }) {
               <a href={nav.path} key={index}>
                 {nav.name}
               </a>
-            )
+            );
           })}
         </nav>
         <div>{rightAddon}</div>
@@ -36,54 +36,54 @@ function Header({ navs, leftAddon, rightAddon, id }) {
               <a href={nav.path} key={index}>
                 {nav.name}
               </a>
-            )
+            );
           })}
         </nav>
         <div>{rightAddon}</div>
       </div>
     </header>
-  )
+  );
 }
 
 function Primary({ leftAddon, rightAddon }) {
   const navs = [
-    { name: 'Beranda', path: '#' },
-    { name: 'Tentang', path: '#about' },
-    { name: 'Layanan', path: '#services' },
-    { name: 'Tim', path: '#team' },
-    { name: 'Kontak', path: '#contact' },
-  ]
-  return <Header id={'header-primary'} leftAddon={leftAddon} rightAddon={rightAddon} navs={navs} />
+    { name: "Beranda", path: "#" },
+    { name: "Tentang", path: "#about" },
+    { name: "Layanan", path: "#services" },
+    { name: "Tim", path: "#team" },
+    { name: "Kontak", path: "#contact" },
+  ];
+  return <Header id={"header-primary"} leftAddon={leftAddon} rightAddon={rightAddon} navs={navs} />;
 }
 
 function Secondary({ leftAddon, rightAddon }) {
-  const uid = Cookies.get('uid')
-  const [user, setUser] = useState('')
+  const uid = Cookies.get("uid");
+  const [user, setUser] = useState("");
   const { get, response } = useFetch(`${import.meta.env.VITE_API_URL}users`, {
     headers: {
-      Authorization: `Bearer ${jsCookie.get('access_token')}`,
+      Authorization: `Bearer ${jsCookie.get("access_token")}`,
     },
-  })
+  });
   async function getUser() {
-    const data = await get(`/q?id=${uid}`)
+    const data = await get(`/q?id=${uid}`);
     if (response.ok) {
-      setUser(data)
+      setUser(data);
     }
   }
 
   useEffect(() => {
-    getUser()
-  }, [])
+    getUser();
+  }, []);
   const navs = [
-    { name: 'Beranda', path: '/dashboard' },
-    { name: 'Artikel', path: '/artikel' },
-    { name: 'Forum', path: '/forum' },
+    { name: "Beranda", path: "/dashboard" },
+    { name: "Artikel", path: "/artikel" },
+    { name: "Forum", path: "/forum" },
     {
-      name: 'Konsultasi',
-      path: user.role === 'admin' ? '/konsultasi/admin' : '/konsultasi',
+      name: "Konsultasi",
+      path: user.role === "admin" ? "/konsultasi/admin" : "/konsultasi",
     },
-  ]
-  return <Header id={'header-secondary'} leftAddon={leftAddon} rightAddon={rightAddon} navs={navs} />
+  ];
+  return <Header id={"header-secondary"} leftAddon={leftAddon} rightAddon={rightAddon} navs={navs} />;
 }
 
 function Brand({ v = 2 }) {
@@ -94,7 +94,7 @@ function Brand({ v = 2 }) {
         <h1 className="brand-name">adanest</h1>
       </div>
     </Link>
-  )
+  );
 }
 
 function AuthButton() {
@@ -107,31 +107,31 @@ function AuthButton() {
         <button className="btn btn-outline btn-sm">Buat akun</button>
       </Link>
     </>
-  )
+  );
 }
 
 function NotificationIcon() {
-  return <div className="notification-icon"></div>
+  return <div className="notification-icon"></div>;
 }
 
 function UserProfileBtn() {
-  const uid = Cookies.get('uid')
-  const [user, setUser] = useState('')
+  const uid = Cookies.get("uid");
+  const [user, setUser] = useState("");
   const { get, response } = useFetch(`${import.meta.env.VITE_API_URL}users`, {
     headers: {
-      Authorization: `Bearer ${jsCookie.get('access_token')}`,
+      Authorization: `Bearer ${jsCookie.get("access_token")}`,
     },
-  })
+  });
   async function getUser() {
-    const data = await get(`/q?id=${uid}`)
+    const data = await get(`/q?id=${uid}`);
     if (response.ok) {
-      setUser(data)
+      setUser(data);
     }
   }
 
   useEffect(() => {
-    getUser()
-  }, [])
+    getUser();
+  }, []);
   return (
     <div className="user-profile-btn">
       <img src={user.avatar} alt="user" width={56} height={56} />
@@ -143,7 +143,7 @@ function UserProfileBtn() {
         <Link to="/">Keluar</Link>
       </div>
     </div>
-  )
+  );
 }
 
 export default {
@@ -153,4 +153,4 @@ export default {
   AuthButton,
   NotificationIcon,
   UserProfileBtn,
-}
+};

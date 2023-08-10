@@ -1,14 +1,14 @@
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import "./style.css";
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { useFetch } from "use-http";
-import Cookies from "js-cookie";
 import Modal from "../../components/shared/modal";
-import { toast } from "react-toastify";
 import toastConf from "../../components/shared/toast/toast.conf";
+import "./style.css";
+import Cookies from "js-cookie";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useFetch } from "use-http";
 
 function ArtikelSaya() {
   const me = JSON.parse(Cookies.get("me"));
@@ -80,21 +80,13 @@ function ArtikelSaya() {
                 <div className="artikel-item__content__title">
                   <Link to={`/artikel/${post._id}`}>{post.title}</Link>
                 </div>
-                <div className="artikel-item__content__desc">
-                  {post.content.slice(0, 200)}
-                </div>
+                <div className="artikel-item__content__desc">{post.content.slice(0, 200)}</div>
               </div>
               <div className="artikel-item__content__action">
                 <Link to={`/buat-artikel?id=${post._id}`}>
-                  <button className="btn btn-sm btn-filled btn-filled-yellow">
-                    Edit
-                  </button>
+                  <button className="btn btn-sm btn-filled btn-filled-yellow">Edit</button>
                 </Link>
-                <button
-                  onClick={handleOpenModal}
-                  data-post-id={post._id}
-                  className="btn btn-sm btn-filled btn-filled-red"
-                >
+                <button onClick={handleOpenModal} data-post-id={post._id} className="btn btn-sm btn-filled btn-filled-red">
                   Hapus
                 </button>
               </div>
@@ -110,14 +102,10 @@ function ArtikelSaya() {
         isOpen={isOpen}
         toggleModal={handleOpenModal}
         actionBtn={
-          <button
-            className="btn btn-sm btn-filled btn-filled-red"
-            onClick={handleDelete}
-          >
+          <button className="btn btn-sm btn-filled btn-filled-red" onClick={handleDelete}>
             Hapus
           </button>
-        }
-      ></Modal>
+        }></Modal>
     </>
   );
 }

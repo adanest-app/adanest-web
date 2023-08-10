@@ -1,10 +1,11 @@
-import "./style.css";
 import heroImg from "./hero.png";
-import { Link } from "react-router-dom";
-import { useFetch } from "use-http";
+import "./style.css";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useDebounce } from "use-debounce";
+import { useFetch } from "use-http";
+
 function Hero() {
   const [text, setText] = useState();
   const [value] = useDebounce(text, 300);
@@ -37,28 +38,14 @@ function Hero() {
           <span></span>
           <span></span>
         </div>
-        <p className="english-quote">
-          “The more you read, the more things you know. The more things you
-          learn, the more places you visit.”
-        </p>
-        <p className="indonesia-quote">
-          “Semakin banyak yang kamu baca, lebih banyak hal yang kamu ketahui.
-          lebih banyak hal yang kamu pelajari semakin banyak tempat yang kamu
-          kunjungi.”
-        </p>
+        <p className="english-quote">“The more you read, the more things you know. The more things you learn, the more places you visit.”</p>
+        <p className="indonesia-quote">“Semakin banyak yang kamu baca, lebih banyak hal yang kamu ketahui. lebih banyak hal yang kamu pelajari semakin banyak tempat yang kamu kunjungi.”</p>
         <div>
           <Link to={"/artikel/saya"}>
-            <button className="btn btn-filled btn-filled-green">
-              Artikel Saya
-            </button>
+            <button className="btn btn-filled btn-filled-green">Artikel Saya</button>
           </Link>
           <div className="form-control form-control-outline">
-            <input
-              id="artikel-search"
-              type="search"
-              placeholder=" "
-              onChange={searchArtikel}
-            />
+            <input id="artikel-search" type="search" placeholder=" " onChange={searchArtikel} />
             <label htmlFor="artikel-search">Cari Artikel</label>
             <div className="search-artikel-result">
               {posts.map((post) => (

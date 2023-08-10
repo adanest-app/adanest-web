@@ -1,28 +1,25 @@
+import ProfileModal from "../../components/profile/modal";
+import ProfileSettings from "../../components/profile/settings";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import ProfileModal from "../../components/profile/modal";
+import Cookies from "js-cookie";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import ProfileSettings from "../../components/profile/settings";
-import { useFetch } from "use-http";
-import Cookies from "js-cookie";
 import { toast } from "react-toastify";
+import { useFetch } from "use-http";
 
 function Profile() {
   const [me, setMe] = useState(JSON.parse(Cookies.get("me")));
   const [isOpen, setIsOpen] = useState(false);
   const [editFor, setEditFor] = useState("profile__public");
   const { register, handleSubmit, reset } = useForm();
-  const { put, response, get } = useFetch(
-    `${import.meta.env.VITE_API_URL}users`,
-    {
-      cachePolicy: "no-cache",
-      headers: {
-        Authorization: `Bearer ${Cookies.get("access_token")}`,
-      },
-    }
-  );
+  const { put, response, get } = useFetch(`${import.meta.env.VITE_API_URL}users`, {
+    cachePolicy: "no-cache",
+    headers: {
+      Authorization: `Bearer ${Cookies.get("access_token")}`,
+    },
+  });
   const toggleModal = (ev) => {
     reset();
     setIsOpen(!isOpen);
@@ -61,14 +58,7 @@ function Profile() {
           }
         />
         <ProfileSettings me={me} toggleModal={toggleModal} />
-        <ProfileModal
-          editFor={editFor}
-          isOpen={isOpen}
-          onSubmit={onSubmit}
-          toggleModal={toggleModal}
-          handleSubmit={handleSubmit}
-          register={register}
-        />
+        <ProfileModal editFor={editFor} isOpen={isOpen} onSubmit={onSubmit} toggleModal={toggleModal} handleSubmit={handleSubmit} register={register} />
       </Container>
       <Footer.FooterContainer>
         <Footer.FooterChild />

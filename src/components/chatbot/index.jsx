@@ -1,8 +1,8 @@
-import { TbMessageChatbot, TbSend } from "react-icons/tb";
-import { useFetch } from "use-http";
+import "./style.css";
 import Cookies from "js-cookie";
 import { useEffect, useRef, useState } from "react";
-import "./style.css";
+import { TbMessageChatbot, TbSend } from "react-icons/tb";
+import { useFetch } from "use-http";
 
 function Chatbot() {
   const { post } = useFetch(`${import.meta.env.VITE_API_URL}nlp/process`, {
@@ -58,9 +58,7 @@ function Chatbot() {
         <div className="cb-card">
           <div className="cb-body" ref={bodyRef}>
             <div data-from-me={false}>Halo, ada yang bisa saya bantu?</div>
-            <div data-from-me={false}>
-              Anda bisa menanyakan informasi terkait Adanest disini
-            </div>
+            <div data-from-me={false}>Anda bisa menanyakan informasi terkait Adanest disini</div>
             {messages.map((message, index) => (
               <div key={index} data-from-me={message.fromMe}>
                 {message.message}
@@ -68,12 +66,7 @@ function Chatbot() {
             ))}
           </div>
           <div className="cb-footer">
-            <input
-              onKeyDown={onKeyDown}
-              ref={inputRef}
-              id="chatbot-input"
-              placeholder="Kata kunci anda..."
-            />
+            <input onKeyDown={onKeyDown} ref={inputRef} id="chatbot-input" placeholder="Kata kunci anda..." />
             <button onClick={onClick}>
               <TbSend size={20} />
             </button>

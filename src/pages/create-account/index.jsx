@@ -1,11 +1,11 @@
-import createAccooutImg from "./create-account.png";
 import Container from "../../components/shared/container";
-import { useEffect } from "react";
+import createAccooutImg from "./create-account.png";
 import "./style.css";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useFetch } from "use-http";
-import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useFetch } from "use-http";
 
 function CreateAccont() {
   const { response, post } = useFetch(`${import.meta.env.VITE_API_URL}users`, {
@@ -52,66 +52,33 @@ function CreateAccont() {
         <form className="create-account-form" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <div className="form-control form-control-sm">
-              <input
-                type="text"
-                id="first-name"
-                placeholder=" "
-                {...register("firstName", { required: true })}
-                autoComplete="false"
-              />
+              <input type="text" id="first-name" placeholder=" " {...register("firstName", { required: true })} autoComplete="false" />
               <label htmlFor="first-name">First Name</label>
             </div>
             <div className="form-control form-control-sm">
-              <input
-                type="text"
-                id="last-name"
-                placeholder=" "
-                {...register("lastName")}
-                autoComplete="false"
-              />
+              <input type="text" id="last-name" placeholder=" " {...register("lastName")} autoComplete="false" />
               <label htmlFor="last-name">Last name</label>
             </div>
           </div>
           <div>
             <div className="form-control">
-              <input
-                type="text"
-                id="username"
-                placeholder=" "
-                {...register("username", { required: true })}
-                autoComplete="false"
-              />
+              <input type="text" id="username" placeholder=" " {...register("username", { required: true })} autoComplete="false" />
               <label htmlFor="username">Username</label>
             </div>
           </div>
           <div>
             <div className="form-control">
-              <input
-                type="email"
-                id="email"
-                placeholder=" "
-                {...register("email", { required: true })}
-                autoComplete="false"
-              />
+              <input type="email" id="email" placeholder=" " {...register("email", { required: true })} autoComplete="false" />
               <label htmlFor="email">Email</label>
             </div>
           </div>
           <div>
             <div className="form-control">
-              <input
-                type="password"
-                id="password"
-                placeholder=" "
-                {...register("password", { required: true })}
-                autoComplete="false"
-              />
+              <input type="password" id="password" placeholder=" " {...register("password", { required: true })} autoComplete="false" />
               <label htmlFor="password">Password</label>
             </div>
           </div>
-          <button
-            className="btn btn-sm btn-filled btn-filled-yellow"
-            type="submit"
-          >
+          <button className="btn btn-sm btn-filled btn-filled-yellow" type="submit">
             Create Account
           </button>
           <p>

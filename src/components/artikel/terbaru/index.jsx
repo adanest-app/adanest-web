@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import Author from "../author";
 import "./style.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useFetch } from "use-http";
 
 function Terbaru() {

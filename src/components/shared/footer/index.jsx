@@ -1,10 +1,9 @@
- 
 /* eslint-disable react-refresh/only-export-components */
 import Container from "../container";
-import "./style.css";
-import twitterImg from "./twitter.png";
 import facebookImg from "./facebook.png";
 import instagramImg from "./instagram.png";
+import "./style.css";
+import twitterImg from "./twitter.png";
 
 function FooterContainer({ children }) {
   return (
@@ -20,17 +19,11 @@ function FooterChild() {
       <div>
         <div>
           <h1>Adanest</h1>
-          <p>
-            Bersama-sama, kita akan membangun fondasi yang kuat untuk kehidupan
-            yang lebih sehat, lebih bahagia, dan bebas dari ketergantungan yang
-            merusak.
-          </p>
+          <p>Bersama-sama, kita akan membangun fondasi yang kuat untuk kehidupan yang lebih sehat, lebih bahagia, dan bebas dari ketergantungan yang merusak.</p>
         </div>
         <div>
           <h1>Get notified when we launch!</h1>
-          <p>
-            Stay up to date with the latest news, announcements, and articles.
-          </p>
+          <p>Stay up to date with the latest news, announcements, and articles.</p>
           <div>
             <div className="form-control">
               <input type="email" id="email" placeholder=" " />

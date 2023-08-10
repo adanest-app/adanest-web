@@ -1,12 +1,12 @@
+import KomentarBalasan from "../../components/artikel/komentar-balasan";
+import SebuahArtikel from "../../components/artikel/sebuah-artikel";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import SebuahArtikel from "../../components/artikel/sebuah-artikel";
-import KomentarBalasan from "../../components/artikel/komentar-balasan";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useFetch } from "use-http";
 import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useFetch } from "use-http";
 
 function LihatArtikel() {
   const params = useParams();

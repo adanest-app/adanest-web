@@ -1,5 +1,5 @@
-import ReactTimeAgo from "react-time-ago";
 import "./style.css";
+import ReactTimeAgo from "react-time-ago";
 
 function Author({ avatar, username, createdAt }) {
   return (

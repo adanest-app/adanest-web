@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
-import Container from '../../components/shared/container'
-import errorImg from './error.png'
-import './style.css'
+import Container from "../../components/shared/container";
+import errorImg from "./error.png";
+import "./style.css";
+import { Link } from "react-router-dom";
 
 function ErrorElement() {
   return (
@@ -13,7 +13,7 @@ function ErrorElement() {
         </Link>
       </div>
     </Container>
-  )
+  );
 }
 
-export default ErrorElement
+export default ErrorElement;

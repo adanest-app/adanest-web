@@ -7,14 +7,8 @@ function Hero() {
       <div>
         <h3>#AyoHidupSehat</h3>
         <h2>Lupakan Kecanduan PMO dengan Adanest</h2>
-        <p>
-          Bersama-sama, kita akan membangun fondasi yang kuat untuk kehidupan
-          yang lebih sehat, lebih bahagia, dan bebas dari ketergantungan yang
-          merusak.
-        </p>
-        <button className="btn btn-filled btn-filled-green">
-          Daftar Sekarang
-        </button>
+        <p>Bersama-sama, kita akan membangun fondasi yang kuat untuk kehidupan yang lebih sehat, lebih bahagia, dan bebas dari ketergantungan yang merusak.</p>
+        <button className="btn btn-filled btn-filled-green">Daftar Sekarang</button>
       </div>
       <div>
         <img src={homePng} alt="home" />

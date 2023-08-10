@@ -1,10 +1,10 @@
+import ModalBuatPost from "../../components/forum/modal-buat-post";
+import Posts, { Search } from "../../components/forum/post";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import Posts, { Search } from "../../components/forum/post";
-import ModalBuatPost from "../../components/forum/modal-buat-post";
 
 function Forum() {
   const [searchParams] = useSearchParams();
@@ -25,27 +25,16 @@ function Forum() {
             <>
               <Header.NotificationIcon />
               <Header.UserProfileBtn />
-              <button
-                onClick={toggleModal}
-                className="btn btn-filled btn-filled-yellow btn-sm"
-              >
+              <button onClick={toggleModal} className="btn btn-filled btn-filled-yellow btn-sm">
                 Buat Post
               </button>
             </>
           }
         />
         {!searchParams.get("id") && <Search setPosts={setPosts} />}
-        <Posts
-          posts={posts}
-          setPosts={setPosts}
-          postId={searchParams.get("id")}
-        />
+        <Posts posts={posts} setPosts={setPosts} postId={searchParams.get("id")} />
       </Container>
-      <ModalBuatPost
-        isOpen={isOpen}
-        setPosts={setPosts}
-        toggleModal={toggleModal}
-      />
+      <ModalBuatPost isOpen={isOpen} setPosts={setPosts} toggleModal={toggleModal} />
       <Footer.FooterContainer>
         <Footer.FooterChild />
       </Footer.FooterContainer>

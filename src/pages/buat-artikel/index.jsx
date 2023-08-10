@@ -1,14 +1,14 @@
-import Container from "../../components/shared/container";
-import Header from "../../components/shared/header";
-import { useState, useEffect } from "react";
-import jsCookie from "js-cookie";
-import useFetch from "use-http";
-import SebuahArtikel from "../../components/artikel/sebuah-artikel";
 import FormBuatArtikel from "../../components/artikel/form-buat-artikel";
+import SebuahArtikel from "../../components/artikel/sebuah-artikel";
+import Container from "../../components/shared/container";
+import Footer from "../../components/shared/footer";
+import Header from "../../components/shared/header";
+import toastConf from "../../components/shared/toast/toast.conf";
+import jsCookie from "js-cookie";
+import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import Footer from "../../components/shared/footer";
-import toastConf from "../../components/shared/toast/toast.conf";
+import useFetch from "use-http";
 
 function BuatArtikel() {
   const [searchParams] = useSearchParams();
@@ -88,31 +88,16 @@ function BuatArtikel() {
                 onClick={() => {
                   setPratinjau(!pratinjau);
                 }}
-                className="btn btn-filled btn-filled-yellow btn-sm"
-              >
+                className="btn btn-filled btn-filled-yellow btn-sm">
                 {pratinjau ? "Edit" : "Pratinjau"}
               </button>
             </>
           }
         />
         {pratinjau ? (
-          <SebuahArtikel
-            title={judul || "Judul Belum Ada"}
-            content={content || "Konten Belum Ada"}
-            owner={me}
-            createdAt={new Date()}
-            cover={cover}
-          />
+          <SebuahArtikel title={judul || "Judul Belum Ada"} content={content || "Konten Belum Ada"} owner={me} createdAt={new Date()} cover={cover} />
         ) : (
-          <FormBuatArtikel
-            judul={judul}
-            setJudul={setJudul}
-            content={content}
-            setContent={setContent}
-            onPublish={onPublish}
-            cover={cover}
-            setCover={setCover}
-          />
+          <FormBuatArtikel judul={judul} setJudul={setJudul} content={content} setContent={setContent} onPublish={onPublish} cover={cover} setCover={setCover} />
         )}
       </Container>
       <Footer.FooterContainer>

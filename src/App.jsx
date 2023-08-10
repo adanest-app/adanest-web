@@ -1,104 +1,104 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
-import Layout from './Layout'
-import toastConf from './components/shared/toast/toast.conf'
-import Artikel from './pages/artikel'
-import ArtikelSaya from './pages/artikel-saya'
-import BuatArtikel from './pages/buat-artikel'
-import CreateAccount from './pages/create-account'
-import Dashboard from './pages/dashboard'
-import Done from './pages/done'
-import ErrorElement from './pages/error'
-import ForgotPassword from './pages/forgot-password'
-import Forum from './pages/forum'
-import Homepage from './pages/homepage'
-import Konsultasi from './pages/konsultasi'
-import LihatArtikel from './pages/lihat-artikel'
-import Login from './pages/login'
-import NewPassword from './pages/new-password'
-import Profile from './pages/profile'
-import KonsultasiAdmin from './pages/proses-konsultasi/admin'
-import KonsultasiClient from './pages/proses-konsultasi/client'
+import Layout from "./Layout";
+import toastConf from "./components/shared/toast/toast.conf";
+import Artikel from "./pages/artikel";
+import ArtikelSaya from "./pages/artikel-saya";
+import BuatArtikel from "./pages/buat-artikel";
+import CreateAccount from "./pages/create-account";
+import Dashboard from "./pages/dashboard";
+import Done from "./pages/done";
+import ErrorElement from "./pages/error";
+import ForgotPassword from "./pages/forgot-password";
+import Forum from "./pages/forum";
+import Homepage from "./pages/homepage";
+import Konsultasi from "./pages/konsultasi";
+import LihatArtikel from "./pages/lihat-artikel";
+import Login from "./pages/login";
+import NewPassword from "./pages/new-password";
+import Profile from "./pages/profile";
+import KonsultasiAdmin from "./pages/proses-konsultasi/admin";
+import KonsultasiClient from "./pages/proses-konsultasi/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const routes = createBrowserRouter([
-  { path: '/', element: <Homepage />, errorElement: <ErrorElement /> },
+  { path: "/", element: <Homepage />, errorElement: <ErrorElement /> },
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     errorElement: <ErrorElement />,
     children: [
       {
-        path: '/dashboard',
+        path: "/dashboard",
         element: <Dashboard />,
       },
       {
-        path: '/artikel',
+        path: "/artikel",
         element: <Artikel />,
       },
       {
-        path: '/buat-artikel',
+        path: "/buat-artikel",
         element: <BuatArtikel />,
       },
       {
-        path: '/profile',
+        path: "/profile",
         element: <Profile />,
       },
       {
-        path: '/artikel/:artikelId',
+        path: "/artikel/:artikelId",
         element: <LihatArtikel />,
       },
       {
-        path: '/forum',
+        path: "/forum",
         element: <Forum />,
       },
       {
-        path: '/konsultasi',
+        path: "/konsultasi",
         element: <Konsultasi />,
       },
       {
-        path: '/konsultasi/admin',
+        path: "/konsultasi/admin",
         element: <KonsultasiAdmin />,
       },
       {
-        path: '/konsultasi/client',
+        path: "/konsultasi/client",
         element: <KonsultasiClient />,
       },
       {
-        path: '/artikel/saya',
+        path: "/artikel/saya",
         element: <ArtikelSaya />,
       },
     ],
   },
   {
-    path: '/login',
+    path: "/login",
     element: <Login />,
     errorElement: <ErrorElement />,
   },
   {
-    path: '/create-account',
+    path: "/create-account",
     element: <CreateAccount />,
     errorElement: <ErrorElement />,
   },
   {
-    path: '/forgot-password',
+    path: "/forgot-password",
     element: <ForgotPassword />,
     errorElement: <ErrorElement />,
   },
   {
-    path: '/new-password',
+    path: "/new-password",
     element: <NewPassword />,
     errorElement: <ErrorElement />,
   },
 
   {
-    path: '/done',
+    path: "/done",
     element: <Done />,
   },
   {
-    path: '*',
+    path: "*",
     element: <Homepage />,
   },
-])
+]);
 
 function App() {
   return (
@@ -106,7 +106,7 @@ function App() {
       <RouterProvider router={routes} />
       <ToastContainer {...toastConf} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
