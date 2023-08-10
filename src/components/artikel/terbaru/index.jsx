@@ -26,7 +26,7 @@ function Terbaru() {
               <div>
                 <h3>{post.title}</h3>
                 <Author {...post.owner} createdAt={post.createdAt} />
-                <p>{post.content}</p>
+                <p>{post.content.slice(0, 150)}</p>
               </div>
             </div>
           </Link>
