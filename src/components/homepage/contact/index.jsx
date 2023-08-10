@@ -7,7 +7,7 @@ function Contact() {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-    toast.loading("Mengirim data...");
+    const id = toast.loading("Mengirim data...");
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -17,7 +17,8 @@ function Contact() {
         myForm.reset();
         toast.success("Pesan berhasil dikirim");
       })
-      .catch(() => toast.error("Gagal mengirim pesan"));
+      .catch(() => toast.error("Gagal mengirim pesan"))
+      .finally(() => toast.dismiss(id));
   };
   return (
     <div id="contact">
