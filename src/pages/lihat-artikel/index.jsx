@@ -1,12 +1,13 @@
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useFetch } from "use-http";
 import KomentarBalasan from "../../components/artikel/komentar-balasan";
 import SebuahArtikel from "../../components/artikel/sebuah-artikel";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import Cookies from "js-cookie";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useFetch } from "use-http";
+import { ToTopSecondary } from "../../components/shared/to-top";
 
 function LihatArtikel() {
   const params = useParams();
@@ -44,6 +45,7 @@ function LihatArtikel() {
       <Footer.FooterContainer>
         <Footer.FooterChild />
       </Footer.FooterContainer>
+      <ToTopSecondary />
     </>
   );
 }

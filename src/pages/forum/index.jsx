@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import ModalBuatPost from "../../components/forum/modal-buat-post";
 import Posts, { Search } from "../../components/forum/post";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { ToTopSecondary } from "../../components/shared/to-top";
 
 function Forum() {
   const [searchParams] = useSearchParams();
@@ -38,6 +39,7 @@ function Forum() {
       <Footer.FooterContainer>
         <Footer.FooterChild />
       </Footer.FooterContainer>
+      <ToTopSecondary />
     </>
   );
 }

@@ -1,14 +1,15 @@
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useFetch } from "use-http";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
 import Modal from "../../components/shared/modal";
+import { ToTopSecondary } from "../../components/shared/to-top";
 import toastConf from "../../components/shared/toast/toast.conf";
 import "./style.css";
-import Cookies from "js-cookie";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
-import { useFetch } from "use-http";
 
 function ArtikelSaya() {
   const me = JSON.parse(Cookies.get("me"));
@@ -106,6 +107,7 @@ function ArtikelSaya() {
             Hapus
           </button>
         }></Modal>
+      <ToTopSecondary />
     </>
   );
 }

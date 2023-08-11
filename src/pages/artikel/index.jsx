@@ -1,11 +1,12 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Hero from "../../components/artikel/hero";
 import Populer from "../../components/artikel/populer";
 import Terbaru from "../../components/artikel/terbaru";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { ToTopSecondary } from "../../components/shared/to-top";
 
 function Artikel() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function Artikel() {
       <Footer.FooterContainer>
         <Footer.FooterChild />
       </Footer.FooterContainer>
+      <ToTopSecondary />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import About from "../../components/homepage/about";
 import Contact from "../../components/homepage/contact";
 import Hero from "../../components/homepage/hero";
@@ -7,8 +8,8 @@ import Why from "../../components/homepage/why";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
+import { ToTopPrimary } from "../../components/shared/to-top";
 import "./style.css";
-import { useEffect } from "react";
 
 function Homepage() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function Homepage() {
       <Footer.FooterContainer>
         <Footer.FooterChild />
       </Footer.FooterContainer>
+      <ToTopPrimary />
     </div>
   );
 }
