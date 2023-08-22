@@ -1,12 +1,12 @@
-import Comments from "../comment";
-import "./style.css";
 import Cookies from "js-cookie";
 import { useEffect } from "react";
 import { AiOutlineComment } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import ReactTimeAgo from "react-time-ago";
 import { useFetch } from "use-http";
+import Comments from "../comment";
+import "./style.css";
 
 function CardBody({ data, handleDelete = () => {} }) {
   const me = JSON.parse(Cookies.get("me"));
@@ -73,6 +73,7 @@ export function Search({ setPosts }) {
 }
 
 function Posts({ setPosts, postId = null, posts }) {
+  const [, setSearchParams] = useSearchParams();
   const { get, del } = useFetch(`${import.meta.env.VITE_API_URL}posts`, {
     cachePolicy: "no-cache",
     headers: {
@@ -93,6 +94,7 @@ function Posts({ setPosts, postId = null, posts }) {
   const handleDelete = (id) => {
     del(id).then(() => {
       get(`search?sort=desc&sortField=createdAt&type=forum`).then((res) => {
+        setSearchParams({});
         setPosts(res || []);
       });
     });
