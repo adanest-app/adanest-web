@@ -1,9 +1,9 @@
-import Modal from "../../shared/modal";
-import "./style.css";
 import Cookies from "js-cookie";
 import { useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useFetch } from "use-http";
+import Modal from "../../shared/modal";
+import "./style.css";
 
 function ModalBuatPost({ isOpen, toggleModal, setPosts }) {
   const [searchParams] = useSearchParams();
@@ -25,6 +25,7 @@ function ModalBuatPost({ isOpen, toggleModal, setPosts }) {
       toggleModal();
       get(`search?sort=desc&sortField=createdAt&type=forum`).then((res) => {
         if (searchParams.get("id")) setPosts(res.filter((post) => post._id === searchParams.get("id")) || []);
+        else setPosts(res || []);
       });
     });
   };
