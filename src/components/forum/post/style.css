@@ -3,15 +3,36 @@
   width: 100%;
   margin: 0 auto;
   margin-bottom: 16px;
+  position: relative;
 }
 
-.forum-search .form-control {
-  max-width: 100%;
+.forum-search .i-search-post {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: var(--green--md);
+  font-size: 24px;
+}
+
+.forum-search input {
   width: 100%;
+  border-radius: 20px;
+  background: #FFF;
+  border: none;
+  padding: 20px 60px;
+  font-size: large;
+  color: var(--green--md);
+  transition: all 0.3s ease-in-out;
 }
 
-.forum-search .form-control input {
-  border-radius: 60px;
+.forum-search input:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forum-search input:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .forum-posts {
@@ -21,109 +42,151 @@
   min-height: 100vh;
 }
 
-.post-card {
-  border-radius: 32px;
-  border: 2px solid var(--green--md);
+.card-post {
+  border-radius: 30px;
+  background: #FFF;
   margin-bottom: 16px;
 }
 
-.post-card-body {
+.card-post-header {
   display: flex;
   flex-direction: row;
-  padding: 16px;
+  padding: 20px;
   gap: 16px;
-  justify-content: space-between;
-  position: relative;
-}
-
-.post-card-left {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 16px;
 }
 
-.post-card-left img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+.card-post-header img {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 8px;
   object-fit: cover;
 }
 
-.post-card-center {
-  width: 100%;
-}
-
-.post-card-center-header {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 8px;
-  display: flex;
-}
-
-.post-card-center-header span:first-child {
-  color: var(--green--md);
-  font-size: 24px;
+.card-post-header div h3 {
+  color: var(--green--md, #005248);
+  font-size: 20px;
+  font-style: normal;
   font-weight: 500;
   font-variation-settings: "wght" 500;
   line-height: normal;
 }
 
-.post-card-center-header span:nth-child(2) {
-  color: var(--yellow--sm);
-  font-size: 24px;
+.card-post-header div p {
+  color: var(--gray--md, #6D6D6D);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
   line-height: normal;
 }
 
-.post-time-ago-mobile {
-  display: none;
-}
-
-.post-card-center-header :is(.post-time-ago, .post-time-ago-mobile, .post-delete-icon) {
-  color: var(--gray--md);
-  font-size: 24px;
-  line-height: normal;
-}
-
-.post-card-center-header .post-delete-icon {
+.card-post-header .post-delete-icon {
   cursor: pointer;
   color: var(--red--md);
-  font-size: 29px;
 }
 
-.post-card-center-body {
-  border-radius: 0px 32px 32px 32px;
-  background: var(--green--xs);
-  padding: 11px 19px;
+.card-post-body {
+  padding: 0 20px;
 }
 
-.post-card-center-body p {
-  color: var(--green--md);
-  font-size: 20px;
+.card-post-body p {
+  color: var(--green--md, #005248);
+  text-align: justify;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
   line-height: 28px;
 }
 
-.post-card-right {
-  align-self: flex-end;
-  color: var(--green--md);
+.card-post-footer {
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.post-card-right :is(.comment) {
-  display: flex;
-  flex-direction: column;
   gap: 8px;
-  align-items: center;
 }
 
-.post-card-right :is(.comment) div {
-  border-radius: 52px;
-  border: 2px solid var(--green--md);
-  width: 52px;
-  height: 52px;
+.card-post-footer button {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 11px;
+  background: #EDEDED;
+  height: 30px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.card-post-footer .btn-like-post {
+  width: 30px;
+}
+
+.card-post-footer .btn-like-post[data-liked="true"] .i-like-post {
+  color: #FFA500;
+}
+
+.card-post-footer .btn-like-post .i-like-post {
+  color: #6F6F6F;
+}
+
+.card-post-footer .btn-comment-post {
+  padding: 0 10px;
+}
+
+.card-post-footer .btn-comment-post .i-comment-post {
+  color: #6F6F6F;
+}
+
+.card-post-footer .btn-comment-post p {
+  color: #005248;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  font-variation-settings: "wght" 300;
+  line-height: 28px;
+}
+
+.card-post-comment .card-post-header {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.card-post-comment .card-post-footer {
+  padding-top: 4px;
+}
+
+.card-post-comment .card-post-body {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  position: relative;
+  padding-left: 95px;
+}
+
+.card-post-body-side-line {
+  width: 2px;
+  background: #005248;
+  position: absolute;
+  top: 10px;
+  bottom: 5px;
+  left: 50px;
+  border-radius: 2px;
+}
+
+.card-post-footer .input-comment-post {
+  border-radius: 25px;
+  border: none;
+  width: 100%;
+  background-color: #F3F3F3;
+  padding: 10px 20px;
+}
+
+.card-post-footer .input-comment-post:focus {
+  outline: none;
 }

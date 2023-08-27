@@ -1,0 +1,4 @@
+.bg-forum {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #F5F6F6 0%, #C4FCF1 100%);
+}

@@ -6,6 +6,7 @@ import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
 import { ToTopSecondary } from "../../components/shared/to-top";
+import "./style.css";
 
 function Forum() {
   const [searchParams] = useSearchParams();
@@ -18,7 +19,7 @@ function Forum() {
     document.title = "Adanest | Forum";
   }, []);
   return (
-    <>
+    <div className="bg-forum">
       <Container>
         <Header.Secondary
           leftAddon={<Header.Brand />}
@@ -32,7 +33,7 @@ function Forum() {
             </>
           }
         />
-        {!searchParams.get("id") && <Search setPosts={setPosts} />}
+        <Search setPosts={setPosts} />
         <Posts posts={posts} setPosts={setPosts} postId={searchParams.get("id")} />
       </Container>
       <ModalBuatPost isOpen={isOpen} setPosts={setPosts} toggleModal={toggleModal} />
@@ -40,7 +41,7 @@ function Forum() {
         <Footer.FooterChild />
       </Footer.FooterContainer>
       <ToTopSecondary />
-    </>
+    </div>
   );
 }
 
