@@ -36,14 +36,9 @@ function CardBody({ data }) {
   );
 }
 
-function CardFooter({ data }) {
+function LikeBtn({ data }) {
   const [liked, setLiked] = useState(false);
   const [count, setCount] = useState(0);
-  const navigate = useNavigate();
-  const onClick = () => {
-    if (window.location.search.search(`id=${data._id}`) === -1) navigate(`?id=${data._id}`);
-    else navigate("");
-  };
   const { put, get } = useFetch(`${import.meta.env.VITE_API_URL}likes`, {
     cachePolicy: "no-cache",
     headers: {
@@ -70,15 +65,49 @@ function CardFooter({ data }) {
   };
 
   return (
+    <button className="btn-like-post" onClick={handleLike} data-liked={liked}>
+      <BiSolidLike size={20} className="i-like-post" />
+      <p>{count}</p>
+    </button>
+  );
+}
+
+function CommentBtn({ data }) {
+  const [count, setCount] = useState(0);
+  const { get } = useFetch(`${import.meta.env.VITE_API_URL}comments`, {
+    cachePolicy: "no-cache",
+    headers: {
+      Authorization: `Bearer ${Cookies.get("access_token")}`,
+    },
+  });
+  const navigate = useNavigate();
+  const onClick = () => {
+    if (window.location.search.search(`id=${data._id}`) === -1) navigate(`?id=${data._id}`);
+    else navigate("");
+    get(`post/${data._id}/count`).then((res) => {
+      setCount(res);
+    });
+  };
+
+  useEffect(() => {
+    get(`post/${data._id}/count`).then((res) => {
+      setCount(res);
+    });
+  }, []);
+
+  return (
+    <button onClick={onClick} className="btn-comment-post">
+      <FaComment size={20} className="i-comment-post" />
+      <p>{count}</p>
+    </button>
+  );
+}
+
+function CardFooter({ data }) {
+  return (
     <div className="card-post-footer">
-      <button className="btn-like-post" onClick={handleLike} data-liked={liked}>
-        <BiSolidLike size={20} className="i-like-post" />
-        <p>{count}</p>
-      </button>
-      <button onClick={onClick} className="btn-comment-post">
-        <FaComment size={20} className="i-comment-post" />
-        <p>Tambah Komentar</p>
-      </button>
+      <LikeBtn data={data} />
+      <CommentBtn data={data} />
     </div>
   );
 }
@@ -188,7 +217,6 @@ function Posts({ setPosts, postId = null, posts }) {
 
   useEffect(() => {
     get(`search?sort=desc&sortField=createdAt&type=forum`).then((res) => {
-      console.log(res);
       setPosts(res || []);
     });
   }, []);
