@@ -121,9 +121,6 @@
   cursor: pointer;
 }
 
-.card-post-footer .btn-like-post {
-  width: 30px;
-}
 
 .card-post-footer .btn-like-post[data-liked="true"] .i-like-post {
   color: #FFA500;
@@ -141,7 +138,7 @@
   color: #6F6F6F;
 }
 
-.card-post-footer .btn-comment-post p {
+.card-post-footer :is(.btn-comment-post, .btn-like-post) p {
   color: #005248;
   leading-trim: both;
   text-edge: cap;

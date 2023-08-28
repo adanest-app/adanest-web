@@ -37,15 +37,43 @@ function CardBody({ data }) {
 }
 
 function CardFooter({ data }) {
+  const [liked, setLiked] = useState(false);
+  const [count, setCount] = useState(0);
   const navigate = useNavigate();
   const onClick = () => {
     if (window.location.search.search(`id=${data._id}`) === -1) navigate(`?id=${data._id}`);
     else navigate("");
   };
+  const { put, get } = useFetch(`${import.meta.env.VITE_API_URL}likes`, {
+    cachePolicy: "no-cache",
+    headers: {
+      Authorization: `Bearer ${Cookies.get("access_token")}`,
+    },
+  });
+
+  useEffect(() => {
+    get(`${data._id}/liked`).then((res) => {
+      setLiked(res);
+    });
+  }, []);
+
+  useEffect(() => {
+    get(data._id).then((res) => {
+      setCount(res);
+    });
+  }, [liked]);
+
+  const handleLike = () => {
+    put(data._id).then((res) => {
+      setLiked(!res);
+    });
+  };
+
   return (
     <div className="card-post-footer">
-      <button className="btn-like-post">
+      <button className="btn-like-post" onClick={handleLike} data-liked={liked}>
         <BiSolidLike size={20} className="i-like-post" />
+        <p>{count}</p>
       </button>
       <button onClick={onClick} className="btn-comment-post">
         <FaComment size={20} className="i-comment-post" />
