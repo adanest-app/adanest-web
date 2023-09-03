@@ -10,7 +10,7 @@ function About() {
       <div>
         <div>
           <p>
-            Selamat datang di ADANES, mitra kesehatan Anda yang terpercaya. Kami adalah tim yang berdedikasi untuk memberikan layanan konsultasi kesehatan yang komprehensif dan solusi yang tepat guna
+            Selamat datang di ADANEST, mitra kesehatan Anda yang terpercaya. Kami adalah tim yang berdedikasi untuk memberikan layanan konsultasi kesehatan yang komprehensif dan solusi yang tepat guna
             bagi individu dan organisasi.
           </p>
           <p>
