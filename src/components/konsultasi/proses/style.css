@@ -87,6 +87,15 @@
   line-height: normal;
 }
 
+.konsultasi-body .btn-delete-message {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 2px;
+  right: -4px;
+  color: var(--red--md);
+}
+
 .konsultasi-body > div[data-from-me="false"] {
   position: static;
   transform: translateX(0);

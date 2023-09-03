@@ -1,0 +1,92 @@
+.pilih-konsultan-section > h3 {
+  color: var(--green-md, #005248);
+  font-size: 36px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: normal;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.pilih-konsultan-section > p {
+  max-width: 600px;
+  color: var(--gray-md, #6D6D6D);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  line-height: normal;
+  margin: 0 auto 32px;
+}
+
+.pilih-konsultan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+
+.konsultan-card {
+  border-radius: 32px;
+  background: #C3FCF1;
+  display: inline-flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 48px 14px;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.08), 0px 5px 11px 0px rgba(0, 0, 0, 0.08), 0px 21px 21px 0px rgba(0, 0, 0, 0.07), 0px 47px 28px 0px rgba(0, 0, 0, 0.04), 0px 83px 33px 0px rgba(0, 0, 0, 0.01), 0px 130px 36px 0px rgba(0, 0, 0, 0.00);
+}
+
+.konsultan-card-left img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.konsultan-card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.konsultan-card-right h3 {
+  color: var(--green-md, #005248);
+  font-size: 28px;
+  font-weight: 700;
+  font-variation-settings: "wght" 700;
+  line-height: normal;
+}
+
+.konsultan-card-right p {
+  color: var(--gray-xl, #303030);
+  text-align: justify;
+  font-size: 20px;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  line-height: normal;
+}
+
+.konsultan-card-right button {
+  display: flex;
+  padding: 12px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 32px;
+  background: var(--yellow-md, #FFA500);
+  border: none;
+  color: var(--white, #FFF);
+  font-size: 16px;
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  line-height: normal;
+}
+
+.konsultan-card-right button:active {
+  border: none;
+}

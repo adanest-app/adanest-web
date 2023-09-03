@@ -23,7 +23,7 @@ function CardHeader({ data, handleDelete = () => {} }) {
           <ReactTimeAgo date={new Date(data?.createdAt)} />
         </p>
       </div>
-      {me.id === data?.owner?._id && <MdDelete onClick={() => handleDelete(data?._id)} className="post-delete-icon" />}
+      {(me.id === data?.owner?._id || me.role === "admin") && <MdDelete onClick={() => handleDelete(data?._id)} className="post-delete-icon" />}
     </div>
   );
 }

@@ -1,0 +1,588 @@
+.bg-green {
+  background: var(--green--xs);
+}
+
+.tantangan-section {
+  display: flex;
+  gap: 25px;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.tantangan-left-action {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tantangan-win,
+.tantangan-lost {
+  border: 22px solid #00CA14;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #00CA14;
+}
+
+.tantangan-lost {
+  border-color: #FF1F1F;
+  background: #FF1F1F;
+}
+
+:is(.tantangan-lost, .tantangan-win) div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #fff;
+  padding: 4px 65px;
+}
+
+:is(.tantangan-win, .tantangan-lost) span {
+  color: #00CA14;
+  font-size: 36px;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+}
+
+.tantangan-lost span {
+  color: #FF1F1F;
+}
+
+.tantangan-win svg {
+  color: #00CA14;
+}
+
+.tantangan-lost svg {
+  color: #FF1F1F;
+}
+
+
+.tantangan-left-action button {
+  background: #FFA500;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  font-variation-settings: 'wght' 600;
+  line-height: normal;
+  padding: 22px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.tantangan-left-action button:hover {
+  opacity: 0.8;
+}
+
+.tantangan-left-action button:active {
+  opacity: 0.6;
+}
+
+.btn-buat-tantangan {
+  padding: 22px 0px !important;
+}
+
+button.btn-tantangan-kembali {
+  background-color: #565656;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tantangan-left-action button.active {
+  background: transparent;
+  color: #FFA500;
+  outline: 4px solid #FFA500;
+
+}
+
+.tantangan-left-action .btn-relapse {
+  background: #FF1F1F;
+}
+
+.tantangan-left-action .btn-relapse[disabled] {
+  background: #FF1F1F;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tantangan-right-result {
+  width: 100%;
+}
+
+.tantangan-belum-diambil {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 25px;
+
+}
+
+.tantangan-belum-diambil img {
+  max-width: 380px;
+  object-fit: cover;
+}
+
+.tantangan-belum-diambil h3 {
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+}
+
+/* tantangan sudah diambil */
+.tantangan-diambil {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  background: #fff;
+  border-radius: 25px;
+  padding: 32px;
+}
+
+.tantangan-diambil-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.tantangan-diambil-header p {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  font-variation-settings: 'wght' 300;
+  line-height: normal;
+}
+
+.tantangan-diambil-header span {
+  border-radius: 28px;
+  background: #FFA500;
+  padding: 4px 14px;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+}
+
+.tantangan-diambil-header hr {
+  width: 100%;
+  height: 2px;
+  margin: 8px;
+  background: #FFA500;
+}
+
+.tantangan-diambil-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tantangan-diambil-body-clock {
+  max-width: 380px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-progress {
+  width: 380px;
+  max-width: 380px;
+}
+
+.center-digital-clock {
+  width: 310px;
+  height: 310px;
+  background: #121927;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center-digital-clock div:first-child {
+  display: inline-flex;
+  padding: 10px 20px 0px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: #F5F9FF;
+}
+
+.center-digital-clock div:first-child span:first-child {
+  width: 70px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #121927;
+  color: #FFF;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+}
+
+
+.center-digital-clock div:first-child span:last-child {
+  color: #121927;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: 1;
+}
+
+.center-digital-clock div:nth-child(2) span {
+  color: #FFF;
+  text-align: justify;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+}
+
+.center-digital-clock div:nth-child(2) span:nth-child(2) {
+  margin: 0 8px;
+}
+
+.center-digital-clock div:last-child {
+  display: inline-flex;
+  padding: 19px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 3px 3px 40px 40px;
+  background: #F5F9FF;
+}
+
+.center-digital-clock div:last-child span {
+  color: #121927;
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+  width: 60px;
+}
+
+.tantangan-diambil-body-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 380px;
+}
+
+.tantangan-diambil-body-desc div:first-child {
+  background: #F5F9FF;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.tantangan-diambil-body-desc > :is(:nth-child(3), :last-child) {
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #121927;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.tantangan-diambil-body-desc > :is(:nth-child(3), :last-child) span {
+  color: #F5F9FF;
+  text-align: justify;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+}
+
+.tantangan-diambil-body-desc > :is(:nth-child(3), :last-child) span:first-child {
+  border-radius: 15px;
+  background: #F5F9FF;
+  color: #121927;
+  padding: 4px 20px;
+  font-size: 24px;
+}
+
+/* pilih tantangan */
+.tantangan-buat-header {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.tantangan-buat-header div {
+  flex-shrink: 0;
+  border-radius: 10px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+  padding: 10px 15px;
+  border: 1px solid var(--gray-sm, #939393);
+  background: none;
+  color: #939393;
+}
+
+.tantangan-buat-header div:last-child {}
+
+.tantangan-buat-header .active {
+  background: #FFA500;
+  color: #FFF;
+  border: none;
+}
+
+.tantangan-judul-level {
+  color: #121927;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+
+.tantangan-levels {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tantangan-level {
+  cursor: pointer;
+  border-radius: 10px;
+  background: #FFF;
+  width: 102px;
+  padding: 8px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.tantangan-level:hover {
+  outline: 2px solid #FFA500;
+  box-shadow: 4px 5px 9px rgba(0, 0, 0, 0.20);
+}
+
+.tantangan-level > div:first-child {
+  border-radius: 5px;
+  background: #FFA500;
+  width: 40px;
+  height: 14px;
+  flex-shrink: 0;
+  color: #FFF;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-variation-settings: 'wght' 500;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tantangan-level > div:nth-child(2) {
+  color: #FFA500;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  font-variation-settings: 'wght' 500;
+  line-height: 1;
+  text-align: center;
+}
+
+.tantangan-level div:last-child {
+  display: flex;
+  gap: 2px;
+  color: #C9C9C9;
+}
+
+.tantangan-level-desc {
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 20px;
+  color: #565656;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-variation-settings: 'wght' 400;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.tantangan-level-desc h3 {
+  color: #121927;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.btn-tantangan-konfirmasi {
+  border-radius: 10px;
+  background: #FFA500;
+  border: none;
+  padding: 10px 20px;
+  color: #FFF;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
+}
+
+.btn-tantangan-konfirmasi[disabled] {
+  background: #FFA500;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tantangan-level .active {
+  color: #FFA500;
+}
+
+/* react-calendar */
+.react-calendar {
+  background: white;
+  padding: 32px;
+  border-radius: 32px;
+}
+
+.react-calendar__navigation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 8px;
+}
+
+.react-calendar__navigation__arrow {
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+
+.react-calendar__navigation__label {
+  border: none;
+  background: transparent;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  text-align: center;
+}
+
+.react-calendar__navigation__label__labelText--from {
+  font-size: 24px;
+  font-weight: 600;
+  font-variation-settings: 'wght' 600;
+  color: var(--blue--md);
+}
+
+.react-calendar__month-view__weekdays abbr {
+  font-size: 16px;
+  color: #565656;
+  text-decoration: none;
+}
+
+.react-calendar__month-view__days {
+  margin-top: 4px;
+}
+
+.react-calendar__tile {
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-calendar__tile abbr {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
+.react-calendar__tile:has(div) abbr {
+  background-color: var(--red--md);
+  color: #fff;
+}
+
+.react-calendar__tile abbr:hover,
+.react-calendar__navigation__arrow:hover,
+.react-calendar__decade-view__years__year:hover {
+  background-color: var(--blue--md);
+  color: #fff;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth abbr {
+  color: #939393;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth abbr:hover {
+  color: #fff;
+}
+
+.react-calendar__year-view .react-calendar__tile abbr,
+.react-calendar__decade-view__years__year {
+  width: 100%;
+  border-radius: 4px;
+  padding: auto 8px;
+}
+
+.react-calendar__month-view__days .lost abbr {
+  background-color: var(--red--md);
+  color: #fff;
+}
+
+.react-calendar__month-view__days .won abbr {
+  background-color: var(--green--md);
+  color: #fff;
+}

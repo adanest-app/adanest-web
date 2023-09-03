@@ -1,3 +1,5 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Layout from "./Layout";
 import toastConf from "./components/shared/toast/toast.conf";
 import Artikel from "./pages/artikel";
@@ -17,8 +19,7 @@ import NewPassword from "./pages/new-password";
 import Profile from "./pages/profile";
 import KonsultasiAdmin from "./pages/proses-konsultasi/admin";
 import KonsultasiClient from "./pages/proses-konsultasi/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import Tantangan from "./pages/tantangan";
 
 const routes = createBrowserRouter([
   { path: "/", element: <Homepage />, errorElement: <ErrorElement /> },
@@ -60,12 +61,16 @@ const routes = createBrowserRouter([
         element: <KonsultasiAdmin />,
       },
       {
-        path: "/konsultasi/client",
+        path: "/konsultasi/:konsultasiId",
         element: <KonsultasiClient />,
       },
       {
         path: "/artikel/saya",
         element: <ArtikelSaya />,
+      },
+      {
+        path: "/tantangan",
+        element: <Tantangan />,
       },
     ],
   },

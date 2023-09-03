@@ -1,8 +1,9 @@
-import "./style.css";
 import Cookies from "js-cookie";
 import { useEffect, useRef, useState } from "react";
+import { useDetectClickOutside } from "react-detect-click-outside";
 import { TbMessageChatbot, TbSend } from "react-icons/tb";
 import { useFetch } from "use-http";
+import "./style.css";
 
 function Chatbot() {
   const { post } = useFetch(`${import.meta.env.VITE_API_URL}nlp/process`, {
@@ -52,8 +53,11 @@ function Chatbot() {
   }, [value]);
 
   const [toggle, setToggle] = useState(false);
+
+  const ref = useDetectClickOutside({ onTriggered: () => setToggle(false) });
+
   return (
-    <div id="chat-bot">
+    <div id="chat-bot" ref={ref}>
       {toggle && (
         <div className="cb-card">
           <div className="cb-body" ref={bodyRef}>

@@ -1,16 +1,15 @@
 /* eslint-disable react-refresh/only-export-components */
-import brand1 from "./brand-1.svg";
-import brand2 from "./brand-2.svg";
-import "./style.css";
 import { default as Cookies, default as jsCookie } from "js-cookie";
 import { useEffect, useState } from "react";
 import { MdArrowDropDown, MdClose, MdMenu } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useFetch } from "use-http";
+import brand1 from "./brand-1.svg";
+import brand2 from "./brand-2.svg";
+import "./style.css";
 
 function Header({ navs, leftAddon, rightAddon, id }) {
   const [nav, setNav] = useState(false);
-
   return (
     <header id={id}>
       {leftAddon}
@@ -82,6 +81,10 @@ function Secondary({ leftAddon, rightAddon }) {
       name: "Konsultasi",
       path: user.role === "admin" ? "/konsultasi/admin" : "/konsultasi",
     },
+    {
+      name: "Tantangan",
+      path: "/tantangan",
+    },
   ];
   return <Header id={"header-secondary"} leftAddon={leftAddon} rightAddon={rightAddon} navs={navs} />;
 }
@@ -132,6 +135,7 @@ function UserProfileBtn() {
   useEffect(() => {
     getUser();
   }, []);
+
   return (
     <div className="user-profile-btn">
       <img src={user.avatar} alt="user" width={56} height={56} />
@@ -140,7 +144,17 @@ function UserProfileBtn() {
       </div>
       <div className="dropdown-menu">
         <Link to="/profile">Pengaturan</Link>
-        <Link to="/">Keluar</Link>
+        <Link
+          to={"/"}
+          onClick={(e) => {
+            e.preventDefault();
+            Cookies.remove("me");
+            Cookies.remove("access_token");
+            Cookies.remove("uid");
+            window.location.reload();
+          }}>
+          Keluar
+        </Link>
       </div>
     </div>
   );

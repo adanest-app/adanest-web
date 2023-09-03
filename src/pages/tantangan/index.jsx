@@ -1,16 +1,12 @@
-import { useEffect } from "react";
-import Hero from "../../components/dashboard/hero";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
+import TantanganSection from "../../components/tantangan/TantanganSection";
+import "./style.css";
 
-function Dashboard() {
-  useEffect(() => {
-    document.title = "Adanest | Dashboard";
-    document.body.style.backgroundColor = "var(--white)";
-  }, []);
+export default function Tantangan() {
   return (
-    <>
+    <div className="bg-green">
       <Container>
         <Header.Secondary
           leftAddon={<Header.Brand />}
@@ -21,13 +17,11 @@ function Dashboard() {
             </>
           }
         />
-        <Hero />
+        <TantanganSection />
       </Container>
       <Footer.FooterContainer>
         <Footer.FooterChild />
       </Footer.FooterContainer>
-    </>
+    </div>
   );
 }
-
-export default Dashboard;

@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import Hero from "../../components/konsultasi/hero";
+import PilihKonsultan from "../../components/konsultasi/pilih-konsultan";
 import Container from "../../components/shared/container";
 import Footer from "../../components/shared/footer";
 import Header from "../../components/shared/header";
-import { useEffect } from "react";
 
 function Konsultasi() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function Konsultasi() {
           }
         />
         <Hero />
+        <PilihKonsultan />
       </Container>
       <Footer.FooterContainer>
         <Footer.FooterChild />

@@ -1,11 +1,11 @@
-import Container from "../../components/shared/container";
-import createAccooutImg from "./create-account.png";
-import "./style.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useFetch } from "use-http";
+import Container from "../../components/shared/container";
+import createAccooutImg from "./create-account.png";
+import "./style.css";
 
 function CreateAccont() {
   const { response, post } = useFetch(`${import.meta.env.VITE_API_URL}users`, {
@@ -39,6 +39,13 @@ function CreateAccont() {
     document.title = "Create Account";
     document.body.style.backgroundColor = "var(--green--xs)";
   }, []);
+
+  const [lihatPassword, setLihatPassword] = useState(false);
+
+  const handleLihatPassword = () => {
+    setLihatPassword(!lihatPassword);
+  };
+
   return (
     <Container>
       <div id="create-account">
@@ -74,9 +81,13 @@ function CreateAccont() {
           </div>
           <div>
             <div className="form-control">
-              <input type="password" id="password" placeholder=" " {...register("password", { required: true })} autoComplete="false" />
+              <input type={lihatPassword ? "text" : "password"} id="password" placeholder=" " {...register("password", { required: true })} autoComplete="false" />
               <label htmlFor="password">Password</label>
             </div>
+          </div>
+          <div className="lihat-password" onClick={handleLihatPassword}>
+            <div>{lihatPassword && <span></span>}</div>
+            <p>Lihat password</p>
           </div>
           <button className="btn btn-sm btn-filled btn-filled-yellow" type="submit">
             Create Account

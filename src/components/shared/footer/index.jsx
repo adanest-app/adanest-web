@@ -2,10 +2,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { toast } from "react-toastify";
 import Container from "../container";
-import facebookImg from "./facebook.png";
-import instagramImg from "./instagram.png";
 import "./style.css";
-import twitterImg from "./twitter.png";
 
 function FooterContainer({ children }) {
   return (
@@ -57,11 +54,11 @@ function FooterChild() {
       <hr />
       <div>
         <p>@Copyright ADANEST. All Rights Reserved</p>
-        <div>
+        {/* <div>
           <img src={twitterImg} alt="Twitter" />
           <img src={instagramImg} alt="Instagram" />
           <img src={facebookImg} alt="Facebook" />
-        </div>
+        </div> */}
       </div>
     </footer>
   );

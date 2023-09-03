@@ -215,6 +215,30 @@
   footer > div:first-child > div:last-child > div .form-control {
     width: 100%;
   }
+
+  .tantangan-section {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .tantangan-left-action {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .tantangan-win,
+  .tantangan-lost {
+    width: 48%;
+  }
+
+  .btn-progress-tantangan a {
+    width: 100%;
+  }
+
+  a:has(.btn-progress-tantangan, .btn-buat-tantangan) {
+    width: 48%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -378,5 +402,66 @@
   .forgot-password__desc {
     font-size: 18px;
 
+  }
+
+  .konsultan-card {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .konsultan-card-right {
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+  }
+
+  .tantangan-win,
+  .tantangan-lost {
+    width: 46%;
+  }
+
+  :is(.tantangan-lost, .tantangan-win) div {
+    padding: 4px 45px;
+  }
+
+  .tantangan-left-action button {
+    font-size: 16px !important;
+  }
+
+  .btn-progress-tantangan a {
+    width: 100%;
+  }
+
+  a:has(.btn-progress-tantangan, .btn-buat-tantangan) {
+    width: 46%;
+  }
+
+  .tantangan-buat-header {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .tantangan-diambil-header {
+    gap: 4px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .tantangan-diambil-body {
+    flex-direction: column;
+    gap: 42px;
+  }
+
+  .react-calendar__navigation__label__labelText--from {
+    font-size: 16px;
+  }
+
+  .react-calendar__month-view__weekdays abbr {
+    font-size: 14px;
+  }
+
+  .react-calendar__tile abbr {
+    font-size: 10px;
   }
 }

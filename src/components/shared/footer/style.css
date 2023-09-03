@@ -50,7 +50,7 @@ footer > div:first-child > div:last-child > form {
 
 footer > div:last-child {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 24px;
 }

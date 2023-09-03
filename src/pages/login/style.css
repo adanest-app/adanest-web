@@ -47,3 +47,32 @@
   color: var(--red--md);
   font-size: 16px;
 }
+
+
+/* customize checkbox */
+.lihat-password {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.lihat-password div {
+  height: 16px;
+  width: 16px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--green--md);
+}
+
+.lihat-password div span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--green--md);
+  border-radius: 4px;
+}

@@ -1,12 +1,12 @@
-import Container from "../../components/shared/container";
-import loginImg from "./login.png";
-import "./style.css";
 import jsCookie from "js-cookie";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useFetch } from "use-http";
+import Container from "../../components/shared/container";
+import loginImg from "./login.png";
+import "./style.css";
 
 function Login() {
   const { register, handleSubmit } = useForm();
@@ -47,6 +47,12 @@ function Login() {
     document.body.style.backgroundColor = "var(--green--xs)";
   }, []);
 
+  const [lihatPassword, setLihatPassword] = useState(false);
+
+  const handleLihatPassword = () => {
+    setLihatPassword(!lihatPassword);
+  };
+
   return (
     <Container>
       <div id="login">
@@ -65,8 +71,12 @@ function Login() {
             <label htmlFor="identifier">Enter your email or username</label>
           </div>
           <div className="form-control">
-            <input type="password" id="password" placeholder=" " {...register("password", { required: true })} />
+            <input type={lihatPassword ? "text" : "password"} id="password" placeholder=" " {...register("password", { required: true })} />
             <label htmlFor="password">Enter your Password</label>
+          </div>
+          <div className="lihat-password" onClick={handleLihatPassword}>
+            <div>{lihatPassword && <span></span>}</div>
+            <p>Lihat password</p>
           </div>
           <div className="login-form__footer">
             <button type="submit" className="btn btn-filled btn-sm btn-filled-yellow">

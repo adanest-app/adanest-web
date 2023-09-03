@@ -1,10 +1,12 @@
-import brand from "./brand-2.svg";
-import "./style.css";
 import Cookies from "js-cookie";
 import { useEffect, useRef, useState } from "react";
 import { AiFillCloseCircle, AiOutlineSend } from "react-icons/ai";
+import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useFetch } from "use-http";
+import Modal from "../../shared/modal";
+import brand from "./brand-2.svg";
+import "./style.css";
 
 function Container({ children }) {
   return <div className="konsultasi-container">{children}</div>;
@@ -54,11 +56,26 @@ function SideBar({ users, setUser, setMessages }) {
   );
 }
 
-function Conversation({ user, messages, sendMessage, closePath }) {
+function Conversation({ user, messages, sendMessage, closePath, setMessages }) {
+  const [_user, setUser] = useState({});
+  const { get } = useFetch(`${import.meta.env.VITE_API_URL}users/q?id=${user.id}`, {
+    cachePolicy: "no-cache",
+    headers: {
+      Authorization: `Bearer ${Cookies.get("access_token")}`,
+    },
+  });
+
+  useEffect(() => {
+    user.id &&
+      get().then((res) => {
+        setUser(res || {});
+      });
+  }, []);
+
   return (
     <div className="konsultasi-center">
-      <ConversationHeader avatar={user.avatar || brand} username={user.username || "AdaChat"} to={closePath} />
-      <ConversationBody messages={messages} />
+      <ConversationHeader avatar={_user.avatar || brand} username={_user.username || "AdaChat"} to={closePath} />
+      <ConversationBody messages={messages} setMessages={setMessages} />
       <ConversationFooter sendMessage={sendMessage} />
     </div>
   );
@@ -83,9 +100,11 @@ function ConversationHeader({ avatar, username, to }) {
   );
 }
 
-function ConversationBody({ messages }) {
+function ConversationBody({ messages, setMessages }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messageId, setMessageId] = useState("");
   const me = JSON.parse(Cookies.get("me"));
-  const { put } = useFetch(`${import.meta.env.VITE_API_URL}chat`, {
+  const { put, del } = useFetch(`${import.meta.env.VITE_API_URL}chat`, {
     cachePolicy: "no-cache",
     headers: {
       Authorization: `Bearer ${Cookies.get("access_token")}`,
@@ -106,28 +125,61 @@ function ConversationBody({ messages }) {
     messages?.forEach((msg) => {
       if (msg.state == 0) {
         if (msg.sender._id !== me.id) {
-          put("/read", {
-            messageId: msg._id,
-          });
+          put(`/read/${msg._id}`);
         }
       }
     });
     Scroll();
   }, [messages]);
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleDelete = () => {
+    del(messageId).then(() => {
+      setMessages(messages.filter((msg) => msg._id !== messageId));
+      toggleModal();
+    });
+  };
+
   return (
-    <div className="konsultasi-body" ref={ref}>
-      {messages?.map((message) => (
-        <div data-from-me={message.sender._id === me.id} key={message._id}>
-          {message.message}
-          <span>
-            {new Date(message.createdAt).toLocaleTimeString("id-ID", {
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          </span>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="konsultasi-body" ref={ref}>
+        {messages?.map((message) => (
+          <div data-from-me={message.sender._id === me.id} key={message._id}>
+            {message.message}
+            <span>
+              {new Date(message.createdAt).toLocaleTimeString("id-ID", {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </span>
+            {message.sender._id === me.id && (
+              <button
+                className="btn-delete-message"
+                onClick={() => {
+                  setMessageId(message._id);
+                  toggleModal();
+                }}>
+                <FaTrash size={12} />
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+      <Modal
+        title={"Konfirmasi"}
+        isOpen={isOpen}
+        toggleModal={toggleModal}
+        actionBtn={
+          <button className="btn btn-filled-red btn-filled" onClick={handleDelete}>
+            Hapus
+          </button>
+        }>
+        Apakah anda yakin ingin menghapus pesan ini?
+      </Modal>
+    </>
   );
 }
 

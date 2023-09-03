@@ -1,9 +1,12 @@
-import { Container, Conversation } from "../../../components/konsultasi/proses";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { useFetch } from "use-http";
+import { Container, Conversation } from "../../../components/konsultasi/proses";
 
 function KonsultasiClient() {
+  const { konsultasiId } = useParams();
+
   const [messages, setMessages] = useState([]);
   const { get, post } = useFetch(`${import.meta.env.VITE_API_URL}chat`, {
     cachePolicy: "no-cache",
@@ -13,14 +16,14 @@ function KonsultasiClient() {
   });
 
   const sendMessage = (ref) => {
-    post("/send", { message: ref.current.value }).then(() => {
+    post("/send", { message: ref.current.value, to: konsultasiId }).then(() => {
       ref.current.value = "";
     });
   };
 
   useEffect(() => {
     const id = setInterval(() => {
-      get().then((res) => {
+      get(`?from=${konsultasiId}`).then((res) => {
         setMessages(res);
       });
     }, 1000);
@@ -35,8 +38,9 @@ function KonsultasiClient() {
         messages={messages}
         closePath={"/konsultasi"}
         sendMessage={sendMessage}
+        setMessages={setMessages}
         user={{
-          username: "Admin",
+          id: konsultasiId,
         }}
       />
     </Container>

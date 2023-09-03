@@ -1,8 +1,8 @@
-import { Container, Conversation, SideBar } from "../../../components/konsultasi/proses";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { MdOutlineSwapHorizontalCircle } from "react-icons/md";
 import { useFetch } from "use-http";
+import { Container, Conversation, SideBar } from "../../../components/konsultasi/proses";
 
 function KonsultasiAdmin() {
   const me = JSON.parse(Cookies.get("me"));
@@ -88,7 +88,7 @@ function KonsultasiAdmin() {
       {screenWidth >= 675 && (
         <>
           <SideBar users={users} setUser={setUser} setMessages={setMessages} />
-          <Conversation user={user} messages={messages} sendMessage={sendMessage} closePath={"/dashboard"} />
+          <Conversation user={user} messages={messages} setMessages={setMessages} sendMessage={sendMessage} closePath={"/dashboard"} />
         </>
       )}
     </Container>
