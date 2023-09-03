@@ -55,7 +55,8 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  width: fit-content;
+  max-width: 366px;
+  width: 366px;
 }
 
 .lihat-password div {

@@ -1,7 +1,13 @@
+import { useState } from "react";
 import Modal from "../../shared/modal";
 import "./style.css";
 
 function ProfileModal({ toggleModal, isOpen, editFor, onSubmit, register, handleSubmit }) {
+  const [lihatPassword, setLihatPassword] = useState(false);
+
+  const handleLihatPassword = () => {
+    setLihatPassword(!lihatPassword);
+  };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Modal
@@ -41,8 +47,12 @@ function ProfileModal({ toggleModal, isOpen, editFor, onSubmit, register, handle
               <label htmlFor="email">Email</label>
             </div>
             <div className="form-control form-control-outline">
-              <input type="password" id="password" placeholder=" " {...register("password")} />
+              <input type={lihatPassword ? "text" : "password"} id="password" placeholder=" " {...register("password")} />
               <label htmlFor="password">Password</label>
+            </div>
+            <div className="lihat-password" onClick={handleLihatPassword}>
+              <div>{lihatPassword && <span></span>}</div>
+              <p>Lihat password</p>
             </div>
           </div>
         )}
