@@ -1,9 +1,9 @@
-import toastConf from "../../shared/toast/toast.conf";
-import "./style.css";
 import Cookies from "js-cookie";
 import { MdEdit } from "react-icons/md";
 import { toast } from "react-toastify";
 import { useFetch } from "use-http";
+import toastConf from "../../shared/toast/toast.conf";
+import "./style.css";
 
 function ProfileSettings({ toggleModal, me }) {
   const { post } = useFetch(`${import.meta.env.VITE_API_URL}users/upload/avatar`, {
@@ -26,7 +26,7 @@ function ProfileSettings({ toggleModal, me }) {
         });
         me.avatar = res;
         Cookies.set("me", JSON.stringify(me));
-        window.location.reload();
+        if (JSON.parse(Cookies.get("me")).avatar === res) window.location.reload();
       })
       .catch(() => {
         toast.update(id, {
