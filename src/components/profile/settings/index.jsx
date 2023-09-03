@@ -42,7 +42,7 @@ function ProfileSettings({ toggleModal, me }) {
     <div className="profile__settings">
       <div className="profile__public">
         <div className="profile__avatar">
-          <img src={me.avatar} alt="avatar" />
+          <img src={me.avatar} alt={`avatar-${me.username}`} />
           <label className="profile__avatar-edit">
             <MdEdit size={24} />
             <input type="file" onChange={handleUpload} accept="image/*" />
