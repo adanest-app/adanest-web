@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import aboutPng from "./about.png";
+import aboutImg from "./about.jpg";
 import "./style.css";
 
 function About() {
@@ -22,7 +22,7 @@ function About() {
           </Link>
         </div>
         <div>
-          <img src={aboutPng} alt="About" />
+          <img src={aboutImg} alt="About" />
         </div>
       </div>
     </div>
