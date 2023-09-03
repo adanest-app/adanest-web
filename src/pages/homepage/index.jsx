@@ -17,7 +17,6 @@ function Homepage() {
   useEffect(() => {
     document.title = "Adanest | Homepage";
   }, []);
-  console.log(Cookies.get("me"));
   return (
     <div id="homepage">
       <div className="hero-bg-yellow">

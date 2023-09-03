@@ -1,10 +1,10 @@
-import Container from "../../components/shared/container";
-import newPasswordImg from "./new-password.png";
-import "./style.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useFetch } from "use-http";
+import Container from "../../components/shared/container";
+import newPasswordImg from "./new-password.png";
+import "./style.css";
 
 function NewPassword() {
   const [searchParams] = useSearchParams();
@@ -36,18 +36,29 @@ function NewPassword() {
     document.title = "New Password";
     document.body.style.backgroundColor = "var(--green--xs)";
   }, []);
+
+  const [lihatPassword, setLihatPassword] = useState(false);
+
+  const handleLihatPassword = () => {
+    setLihatPassword(!lihatPassword);
+  };
+
   return (
     <Container>
       <div id="new-password">
         <div className="new-password__form">
           <h1 className="new-password__title">Please enter a new password</h1>
           <div className="form-control">
-            <input ref={ref} type="password" id="password" placeholder=" " />
+            <input ref={ref} type={lihatPassword ? "text" : "password"} id="password" placeholder=" " />
             <label htmlFor="password">Password</label>
           </div>
           <div className="form-control">
-            <input ref={newRef} type="password" id="confirm-password" placeholder=" " />
+            <input ref={newRef} type={lihatPassword ? "text" : "password"} id="confirm-password" placeholder=" " />
             <label htmlFor="confirm-password">Confirm Password</label>
+          </div>
+          <div className="lihat-password" onClick={handleLihatPassword}>
+            <div>{lihatPassword && <span></span>}</div>
+            <p>Lihat password</p>
           </div>
           <div>
             <button onClick={handleChangePassword} className="btn btn-filled btn-filled-yellow">
