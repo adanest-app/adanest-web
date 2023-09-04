@@ -84,7 +84,7 @@ export default function SudahDiambil() {
           </div>
         </div>
         <div className="tantangan-diambil-body-desc">
-          <div>“{levels[week].days_desc[6 - (days % 7)]}”</div>
+          <div>“{levels[week]?.days_desc[6 - (days % 7)]}”</div>
           <div>
             <Line percent={100 - percent} strokeWidth={8} strokeColor="#121927" trailWidth={8} trailColor={"#F5F9FF"} />
           </div>
