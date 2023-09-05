@@ -9,7 +9,7 @@ function Services() {
   return (
     <div id="services">
       <h3>Layanan</h3>
-      <p>Kami menyediakan beberapa layanan yang dapat Anda akses kapanpun dan dimanapun ketika Anda membutuhkannyas</p>
+      <p>Kami menyediakan beberapa layanan yang dapat Anda akses kapanpun dan dimanapun ketika Anda membutuhkannya</p>
       <div>
         <div>
           <div>
